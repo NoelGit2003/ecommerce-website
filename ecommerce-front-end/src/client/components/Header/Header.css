@@ -1,0 +1,21 @@
+li .h-navItems{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.h-homeicon {
+    color: white;
+}
+
+.box{
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.h-sign-in-up{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}

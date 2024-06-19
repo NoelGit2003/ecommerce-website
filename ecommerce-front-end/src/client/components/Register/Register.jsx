@@ -27,6 +27,9 @@ const RegisterForm = () => {
         </div>
       `,
             confirmButtonText: 'Register',
+            customClass: {
+                confirmButton: 'btn btn-primary', 
+            },
             focusConfirm: false,
             didOpen: () => {
                 const popup = Swal.getPopup();
@@ -76,7 +79,7 @@ const RegisterForm = () => {
 
     return (
         <div>
-            <button onClick={showRegisterForm}> Register </button>
+            <button onClick={showRegisterForm} className="btn btn-primary"> Register </button>
         </div>
     );
 };
