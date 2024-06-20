@@ -1,21 +1,24 @@
 import React from 'react';
 import Swal from 'sweetalert2';
+import axios from 'axios';
+
 
 const LoginForm = () => {
-    const showLoginForm = () => {
+
+    const showLoginForm = async () => {
         let emailInput;
         let passwordInput;
 
         Swal.fire({
             title: 'Login',
             html: `
-        <input type="email" id="email" class="swal2-input" placeholder="Email">
-        <input type="password" id="password" class="swal2-input" placeholder="Password">
-      `,
+                <input type="email" id="email" class="swal2-input" placeholder="Email">
+                <input type="password" id="password" class="swal2-input" placeholder="Password">
+            `,
             confirmButtonText: 'Sign in',
-            customClass: {
-                confirmButton: 'btn btn-primary',
-            },
+            // customClass: {
+            //     confirmButton: 'btn btn-primary',
+            // },
             focusConfirm: false,
             didOpen: () => {
                 const popup = Swal.getPopup();
@@ -28,15 +31,67 @@ const LoginForm = () => {
                 const email = emailInput.value;
                 const password = passwordInput.value;
                 if (!email || !password) {
-                    Swal.showValidationMessage(`Please enter email and password`);
+                    Swal.showValidationMessage('Please enter email and password');
                 }
                 return { email, password };
             },
-        }).then((result) => {
+        }).then(async (result) => {
             if (result.isConfirmed) {
                 const { email, password } = result.value;
-                console.log(`Email: ${email}, Password: ${password}`);
-                // Handle login logic here
+                // console.log(`Email: ${email}, Password: ${password}`);
+
+                axios.post('http://localhost:3000/login', { email, password })
+                    .then(res => {
+                        if (res.data.isBlocked) {
+                            throw (err)
+                        }
+                        else if (res.data.token) {
+                            const token = res.data.token;
+                            const decodedToken = JSON.parse(atob(token.split('.')[1]));
+                            console.log(decodedToken);
+
+                            const toast = Swal.mixin({
+                                toast: true,
+                                position: 'top-right',
+                                showConfirmButton: false,
+                                timer: 3000,
+                                timerProgressBar: true,
+                                didOpen: (toast) => {
+                                    toast.addEventListener('mouseenter', Swal.stopTimer);
+                                    toast.addEventListener('mouseleave', Swal.resumeTimer);
+                                }
+                            });
+
+
+                            if (decodedToken.isAdmin) {
+                                window.location.href = "/admin";
+                                // toast.fire({
+                                //     icon: 'success',
+                                //     title: 'Login successful as admin'
+                                // });
+                            } else {
+                                window.location.href = "/";
+                                // toast.fire({
+                                //     icon: 'success',
+                                //     title: 'Login successful as client'
+                                // });
+                            }
+                        } else {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Invalid Credentials',
+                                text: 'Please check your email and password and try again.',
+                            });
+                        }
+                    })
+                    .catch(err => {
+                        console.error(err);
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Error',
+                            text: 'Something went wrong. Either this is a server side issue or your account is blocked by administration.',
+                        });
+                    });
             }
         });
     };

@@ -1,10 +1,10 @@
 import React from 'react';
 import Swal from 'sweetalert2';
+import axios from 'axios';
 
-import './Register.css'
+import './Register.css';
 
 const RegisterForm = () => {
-
     const showRegisterForm = () => {
         let nameInput;
         let emailInput;
@@ -16,20 +16,20 @@ const RegisterForm = () => {
         Swal.fire({
             title: 'Register Form',
             html: `
-        <input type="text" id="name" class="swal2-input" placeholder="Name">
-        <input type="email" id="email" class="swal2-input" placeholder="Email">
-        <input type="text" id="mobile" class="swal2-input" placeholder="Mobile Number">
-        <input type="password" id="password" class="swal2-input" placeholder="Password">
-        <input type="password" id="confirmPassword" class="swal2-input" placeholder="Confirm Password">
-        <div class="reg-checkbox" style="text-align: left; margin-top: 10px;">
-          <input type="checkbox" id="showPassword" style="margin-right: 10px;">
-          <label for="showPassword">Show Password</label>
-        </div>
-      `,
+                <input type="text" id="name" class="swal2-input" placeholder="Name">
+                <input type="email" id="email" class="swal2-input" placeholder="Email">
+                <input type="text" id="mobile" class="swal2-input" placeholder="Mobile Number">
+                <input type="password" id="password" class="swal2-input" placeholder="Password">
+                <input type="password" id="confirmPassword" class="swal2-input" placeholder="Confirm Password">
+                <div class="reg-checkbox" style="text-align: left; margin-top: 10px;">
+                    <input type="checkbox" id="showPassword" style="margin-right: 10px;">
+                    <label for="showPassword">Show Password</label>
+                </div>
+            `,
             confirmButtonText: 'Register',
-            customClass: {
-                confirmButton: 'btn btn-primary', 
-            },
+            // customClass: {
+            //     confirmButton: 'btn btn-primary',
+            // },
             focusConfirm: false,
             didOpen: () => {
                 const popup = Swal.getPopup();
@@ -71,15 +71,31 @@ const RegisterForm = () => {
             if (result.isConfirmed) {
                 const { name, email, mobile, password } = result.value;
                 const [isAdmin, isBlocked] = [false, false];
-                console.log(`Name: ${name}, Email: ${email}, Mobile: ${mobile}, Password: ${password}, ${isAdmin}, ${isBlocked}`);
-                // Handle registration logic here
+                console.log(`Name: ${name}, Email: ${email}, Mobile: ${mobile}, Password: ${password}, isAdmin: ${isAdmin}, isBlocked: ${isBlocked}`);
+
+                axios.post("http://localhost:3000/register", { name, email, mobile, password, isAdmin, isBlocked })
+                    .then((res) => {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Registration Successful',
+                            text: 'You have been registered successfully, you can now login to the website',
+                        });
+                    })
+                    .catch(err => {
+                        console.error(err);
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Registration Failed',
+                            text: 'Something went wrong during registration. Please try again later.',
+                        });
+                    });
             }
         });
     };
 
     return (
         <div>
-            <button onClick={showRegisterForm} className="btn btn-primary"> Register </button>
+            <button onClick={showRegisterForm} className="btn btn-primary me-4"> Register </button>
         </div>
     );
 };

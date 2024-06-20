@@ -1,0 +1,26 @@
+.carousel {
+    margin: 0;
+    padding: 0;
+
+    /* height: 70vh; */
+    /* width: 100vw; */
+}
+
+.carousel-image {
+    max-height: 70vh;
+    max-width: 100vw;
+}
+
+/* @media screen and (min-width: 200px) {
+    .carousel-image {
+        height: 70vh;
+        width: 100vw;
+    }
+} */
+
+@media screen and (min-width: 900px) {
+    .carousel-image {
+        height: 100vh;
+        width: 100vw;
+    }
+}

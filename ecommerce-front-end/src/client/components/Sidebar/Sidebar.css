@@ -1,0 +1,14 @@
+.list-item .side-category{
+    font-size: 20px;
+}
+
+.sub-list{
+    margin-left: 35px;
+    line-height: 30px;
+}
+
+.crousel-h{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
