@@ -12,7 +12,7 @@ export default function Carouselslider() {
         <section className='carousel'>
             <Carousel fade>
                 <Carousel.Item>
-                    <img className='carousel-image' src="./Carousel Images/ElectronicsImage.jpg" alt="" srcset="" />
+                    <img className='carousel-image' src="./Carousel Images/ElectronicsImage.jpg" alt="" />
                     {/* <ExampleCarouselImage text="First slide" /> */}
                     <Carousel.Caption>
                         {/* <h3>First slide label</h3>
@@ -20,7 +20,7 @@ export default function Carouselslider() {
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
-                    <img className='carousel-image' src="./Carousel Images/fashionImage.jpg" alt="" srcset="" />
+                    <img className='carousel-image' src="./Carousel Images/fashionImage.jpg" alt="" />
                     {/* <ExampleCarouselImage text="Second slide" /> */}
                     <Carousel.Caption>
                         {/* <h3>Second slide label</h3>
@@ -28,7 +28,7 @@ export default function Carouselslider() {
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
-                    <img className='carousel-image' src="./Carousel Images/cosmeticsImage.jpg" alt="" srcset="" />
+                    <img className='carousel-image' src="./Carousel Images/cosmeticsImage.jpg" alt="" />
                     {/* <ExampleCarouselImage text="Third slide" /> */}
                     <Carousel.Caption>
                         {/* <h3>Third slide label</h3>

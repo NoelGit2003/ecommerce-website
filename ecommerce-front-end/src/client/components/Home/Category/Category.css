@@ -1,0 +1,71 @@
+/* .pt-sans-regular {
+  font-family: "PT Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+} */
+
+.h-category {
+  width: 80vw;
+  height: auto;
+  text-align: center;
+  /* border: 1px solid black; */
+
+  margin: 4vh 8vw;
+  padding: 40px;
+  padding-bottom: 100px;
+  background-color: white;
+
+  box-shadow: 10px 10px 8px #888888;
+}
+
+.h-category-heading {
+  font-weight: 600;
+  margin-bottom: 10vh;
+  /* font-family: 'AvenirLTW01-85'; */
+  /* font-family: 'Wix Madefor Text VF'; */
+
+
+}
+
+.h-category-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 4rem;
+}
+
+.h-category-box .h-category-list {
+  background-color: #f1f2f4;
+  height: 40vh;
+  width: 40vh;
+  border-radius: 50%;
+  border-style: none;
+}
+
+.h-list-image {
+  height: 40vh;
+  width: 40vh;
+  object-fit: cover;
+
+}
+
+.h-category-list:hover .zoom-image {
+  transform: scale(1.1);
+}
+
+.zoom-image {
+  transition: transform 0.5s ease;
+  object-fit: cover;
+}
+
+.h-category-list h3 {
+  /* font-family: "Ubuntu", sans-serif; */
+  font-weight: 400;
+  font-style: normal;
+  margin-top: 3vh;
+}
+
+.h-category-list {
+  display: flex;
+  flex-direction: column;
+}

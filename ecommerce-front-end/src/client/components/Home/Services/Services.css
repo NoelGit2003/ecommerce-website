@@ -1,0 +1,33 @@
+.h-services{
+    width: 100vw;
+    padding: 80px;
+    padding-bottom: 50px;
+    height: auto;
+    background-color: white;
+    margin-bottom: 5vh;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 8vh;
+    gap: 7vh;
+}
+
+.h-services-items{
+    display: flex;
+    gap: 4vh;
+    justify-content: center;
+     align-items: center;
+    
+
+}
+
+.h-services-items img{
+    height: 10vh;
+    width: 10vh;
+}
+
+.h-services-items p{
+    /* font-family: "Ubuntu", sans-serif; */
+    font-size: 20px;
+    font-weight: 600;
+}
