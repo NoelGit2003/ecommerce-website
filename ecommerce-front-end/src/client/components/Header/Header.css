@@ -19,3 +19,7 @@ li .h-navItems{
     align-items: center;
     flex-direction: row;
 }
+
+.box .header-bottom{
+    background-color: #f1f2f4;
+}

@@ -1,25 +1,21 @@
 .h-collections {
-    height: 100vh;
-    width: auto;
-    padding: 10rem;
+    padding: 2.5rem;
+}
+
+.h-collections .collection-head{
+    padding: 3rem;
 
     display: flex;
     justify-content: center;
     align-items: center;
-    /* flex-direction: column; */
-}
-
-.collection-head{
-    display: flex;
     flex-direction: column;
+    gap: 3rem;
+
+    background-color: white;
+    /* box-shadow: 10px 10px 8px #888888; */
 }
 
-.collection-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
-    /* background-color: white;
-    width: 50px;
-    height: 50px; */
+.collection-item{
+    padding: 1rem;
 }
