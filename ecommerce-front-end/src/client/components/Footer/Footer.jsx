@@ -47,7 +47,7 @@ function Footer() {
                                 <div className="d-flex flex-column flex-sm-row w-100 gap-2">
                                     <label htmlFor="newsletter1" className="visually-hidden" >Email address</label>
                                     <input id="newsletter1" type="text" className="form-control" placeholder="Email address" />
-                                    <button className="btn btn-primary" type="button">Subscribe</button>
+                                    <button className="f-subscribe btn" type="button">Subscribe</button>
                                 </div>
                             </form>
                         </div>

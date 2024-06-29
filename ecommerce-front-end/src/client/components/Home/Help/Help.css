@@ -1,0 +1,97 @@
+.help-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    overflow: hidden;
+    padding-bottom: 3rem;
+}
+
+.help-content {
+    display: flex;
+    flex-direction: row; /* Default to row for larger screens */
+    width: 100%;
+    max-width: 1200px;
+    background-color: #f1f2f4;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* .h-section1 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 450px;
+    background-color: black;
+    padding: 75px;
+    box-shadow: 350px 0px 90px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+} */
+.h-section1 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 450px;
+    background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.7));
+    padding: 75px;
+    box-shadow: 200px 0px 90px rgba(0, 0, 0, 0.5);
+    /* box-shadow: -30px 0px 40px 0px #e4e4e6 inset; */
+    z-index: 1;
+    /* position: absolute; */
+}
+
+.h-section1 h2 {
+    color: white;
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 4vh;
+}
+
+.h-section1 p {
+    color: white;
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.help-button {
+    align-self: flex-start;
+    height: 7vh;
+    width: 24vh;
+    margin-top: 4vh;
+}
+
+.h-section2 {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    
+}
+
+.h-parallax {
+    height: 100%;;
+    
+}
+
+@media (max-width: 800px) {
+    .help-content {
+        flex-direction: column; 
+    }
+
+    .h-section1 {
+        order: 1;
+        box-shadow: 0px 180px 60px rgba(0, 0, 0, 0.32);
+    }
+
+    .h-section2 {
+        order: 2; 
+        height: 300px; 
+    }
+
+    .h-parallax {
+        height: 300px; 
+    }
+}

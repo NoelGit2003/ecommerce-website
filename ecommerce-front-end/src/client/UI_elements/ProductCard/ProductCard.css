@@ -1,26 +1,29 @@
-/* SwiperCard.css */
-
-.swiper-container {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.swiper-collection {
-    width: 100%;
-    height: 100%;
-}
-
-.card {
+.bp-card {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    background-color: #fff;
+    background-color: #f1f2f4;
+    transition: box-shadow 0.3s ease-in-out; /* Add transition for smooth hover effect */
 }
 
-.card-image {
+@keyframes levitate {
+    from {
+        box-shadow: 0 0 0 #888888;
+    }
+    to{
+        box-shadow: 10px 10px 8px #888888;
+    }
+}
+
+.bp-card:hover{
+    animation: levitate 1s ease-in;
+    box-shadow: 10px 10px 8px #888888;
+}
+
+.bp-card-image {
     width: 100%;
     height: auto;
     max-width: 200px;
@@ -29,27 +32,31 @@
     border-radius: 10px;
 }
 
-.card-details {
+/* .bp-card-image:hover{
+    scale: 1.1;
+} */
+
+.bp-card-details {
     display: flex;
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
 }
 
-.card-price {
+.bp-card-price {
     margin-top: 5px;
     font-size: 1em;
     color: #555;
 }
 
-.card-name {
+.bp-card-name {
     margin-top: 10px;
     font-size: 1.2em;
     font-weight: bold;
     color: #333;
 }
 
-.card-rating {
+.bp-card-rating {
     /* margin-bottom: 5px; */
     font-size: 0.9em;
     color: #888;
@@ -57,24 +64,26 @@
     align-items: center;
 }
 
-.card-rating-number{
+.bp-card-rating-number{
     padding: 0 0 0 5px;
+    margin-top: 5px;
 }
 
-.star-rating i {
+.bp-star-rating i {
     color: #FFD700;
-    margin-right: 2px;
+    margin: 10px 2px 2px 0;
+    
 }
 
 @media (max-width: 480px) {
-    .card-image {
+    .bp-card-image {
         max-width: 150px;
         max-height: 150px;
     }
 }
 
 @media (max-width: 320px) {
-    .card-image {
+    .bp-card-image {
         max-width: 100px;
         max-height: 100px;
     }

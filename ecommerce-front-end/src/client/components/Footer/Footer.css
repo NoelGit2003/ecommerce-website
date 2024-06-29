@@ -1,4 +1,4 @@
-.f-links{
+.f-links {
     color: rgb(170, 169, 169);
 }
 
@@ -6,3 +6,12 @@
    margin-top: 18vh;
 } */
 
+footer .f-subscribe {
+    background-color: #7066e0;
+    color: white;
+}
+
+footer .f-subscribe:hover {
+    background-color: #5c53b9;
+    color: white;
+}

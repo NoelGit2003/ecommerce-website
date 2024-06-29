@@ -7,6 +7,8 @@
     flex-direction: row;
     flex-wrap: wrap;
     gap: 3rem;
+
+    z-index: 5;
 }
 
 .hb-item {
@@ -17,8 +19,7 @@
     align-items: flex-start;
     justify-content: start;
 
-    box-shadow: 10px 10px 8px #888888;
-
+    box-shadow: 10px 10px 8px #070515;
 }
 
 .hb-item img {
@@ -39,14 +40,18 @@
 
 /* CSS */
 .b-btn {
+    padding-top: 3rem;
+    font-size: larger;
+    font-weight: 300;
+    
     align-items: center;
     appearance: none;
     background-color: #fff;
     border-radius: 24px;
     border-style: none;
-    box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px, rgba(0, 0, 0, .14) 0 6px 10px 0, rgba(0, 0, 0, .12) 0 1px 18px 0;
+    box-shadow: rgba(0, 0, 0, .2) 0 5px 7px -1px, rgba(0, 0, 0, .14) 0 8px 12px 0, rgba(0, 0, 0, .12) 0 3px 20px 0;
     box-sizing: border-box;
-    color: #3c4043;
+    color: #879198;
     cursor: pointer;
     display: inline-flex;
     fill: currentcolor;
@@ -59,7 +64,7 @@
     line-height: normal;
     max-width: 100%;
     overflow: visible;
-    padding: 2px 24px;
+    padding: 20px 24px;
     position: relative;
     text-align: center;
     text-transform: none;
@@ -74,7 +79,7 @@
 
 .b-btn:hover {
     /* background: #F6F9FE;
-  color: #174ea6; */
+    color: #174ea6; */
     scale: 0.97;
 }
 

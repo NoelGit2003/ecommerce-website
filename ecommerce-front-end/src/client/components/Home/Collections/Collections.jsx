@@ -16,7 +16,7 @@ const Collections = () => {
         <SwiperCard className='collection-item collection-slider' />
 
         <div className="collection-item">
-          <button className='btn btn-primary'>See All</button>
+          <button className='btn collection-btn'>See All</button>
         </div>
 
       </div>

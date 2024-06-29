@@ -41,7 +41,7 @@ function Sidebar() {
                         <ul className="list-unstyled ps-0">
                             <li className="mb-1 list-item">
 
-                                <button style={{ color: "white" }} className="btn btn-toggle d-inline-flex align-items-center rounded border-0 side-category" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
+                                <button style={{ color: "white", marginTop: "10px" }} className="btn btn-toggle d-inline-flex align-items-center rounded border-0 side-category" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
                                     <svg style={{ marginRight: "5px" }} xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
                                         <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
                                     </svg>
@@ -62,7 +62,7 @@ function Sidebar() {
                                 </button>
                             </li>
                             <li className="mb-1 list-item">
-                                <button style={{ color: "white", marginLeft: "20px", marginTop: "20px" }} className="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed side-category" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+                                <button style={{ color: "white", marginLeft: "20px", marginTop: "10px" }} className="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed side-category" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
                                     Beauty Products
                                 </button>
                             </li>

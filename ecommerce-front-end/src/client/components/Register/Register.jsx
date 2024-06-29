@@ -95,7 +95,7 @@ const RegisterForm = () => {
 
     return (
         <div>
-            <button onClick={showRegisterForm} className="btn btn-primary me-4"> Register </button>
+            <button onClick={showRegisterForm} className="register-button btn me-4"> Register </button>
         </div>
     );
 };

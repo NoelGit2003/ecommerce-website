@@ -3,7 +3,7 @@ import './Services.css'
 
 function Services() {
     return (
-        <>
+        <section className="h-service-main">
             <div className="h-services">
 
                 <div className='h-services-items'>
@@ -27,8 +27,7 @@ function Services() {
                 </div>
 
             </div>
-
-        </>
+        </section>
     )
 }
 

@@ -1,0 +1,9 @@
+.mobile-filter-button{
+    background-color: #7066e0;
+    color: white;
+}
+
+.mobile-filter-button:hover{
+    background-color: #5c53b9;
+    color: white;
+}

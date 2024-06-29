@@ -7,6 +7,7 @@ import Header from './client/components/Header/Header'
 import Footer from './client/components/Footer/Footer'
 import Home from './client/components/Home/Home'
 import Dashboard from './admin/components/Dashboard/Dashboard'
+import BrowsingPage from './client/components/BrowsingPage/BrowsingPage'
 import './App.css'
 
 
@@ -33,12 +34,20 @@ const App = () => {
     <section className='app'>
       <userContext.Provider value={user}>
         <BrowserRouter>
-          <Header />
+          <header className='header'>
+            <Header />
+          </header>
+          {/* <div className='home-background'>
+            <img src="./Home Background/background.jpg" />
+          </div> */}
           <Routes>
             <Route element={<Home />} path='/'></Route>
             <Route element={<Dashboard />} path='/admin'></Route>
+            <Route element={<BrowsingPage />} path='/category'></Route>
           </Routes>
-          <Footer />
+          <footer className='footer'>
+            <Footer />
+          </footer>
         </BrowserRouter>
       </userContext.Provider>
     </section>

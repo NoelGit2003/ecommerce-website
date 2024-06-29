@@ -1,32 +1,33 @@
-.h-services{
+.h-service-main{
+    padding-bottom: 3rem;
+}
+
+.h-services {
     width: auto;
     padding: 80px;
-    padding-bottom: 50px;
+    /* padding-bottom: 50px; */
     height: auto;
-    background-color: white;
-    margin-bottom: 5vh;
+    background: linear-gradient(to bottom, #e6dfe6, rgba(255, 255, 255, 1));
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    margin-top: 8vh;
+    /* margin-top: 8vh; */
     gap: 7vh;
 }
 
-.h-services-items{
+.h-services-items {
     display: flex;
     gap: 4vh;
     justify-content: center;
-     align-items: center;
-    
-
+    align-items: center;
 }
 
-.h-services-items img{
+.h-services-items img {
     height: 10vh;
     width: 10vh;
 }
 
-.h-services-items p{
+.h-services-items p {
     /* font-family: "Ubuntu", sans-serif; */
     font-size: 20px;
     font-weight: 600;

@@ -11,11 +11,20 @@
     flex-direction: column;
     gap: 3rem;
 
-    background-color: white;
+    background: linear-gradient(to bottom, #e6dfe6, rgba(255, 255, 255, 1));
     /* box-shadow: 10px 10px 8px #888888; */
 }
 
 
 .collection-item{
-    padding: 1rem;
+    padding: 0.5rem;
+}
+
+.collection-head .collection-btn{
+    background-color: #7066e0;
+    color: white;
+}
+.collection-head .collection-btn:hover{
+    background-color: #5c53b9;
+    color: white;
 }

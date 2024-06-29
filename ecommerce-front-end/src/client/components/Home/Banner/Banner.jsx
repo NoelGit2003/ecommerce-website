@@ -10,7 +10,7 @@ const Banner = () => {
                 <h4>Holiday Deals</h4>
                 <h1>Up to <br />30% off</h1>
                 <h5>Selected Smartphone Brands</h5>
-                <button className="b-btn" role="button">Shop</button>
+                <button className="btn b-btn" role="button">Shop now</button>
             </div>
         </div>
         <div className="hb-item">
@@ -19,7 +19,7 @@ const Banner = () => {
                 <h4>Holiday Deals</h4>
                 <h1>Up to <br />30% off</h1>
                 <h5>Selected Smartphone Brands</h5>
-                <button className="b-btn" role="button">Shop</button>
+                <button className="btn b-btn" role="button">Shop now</button>
             </div>
         </div>
     </section>

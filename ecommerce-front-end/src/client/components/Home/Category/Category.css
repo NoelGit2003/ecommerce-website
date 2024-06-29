@@ -13,7 +13,8 @@
   margin: 4vh 8vw;
   padding: 40px;
   padding-bottom: 100px;
-  background-color: white;
+  /* background-color: white; */
+  background: linear-gradient(to bottom, #e6dfe6, rgba(255, 255, 255, 1));
 
   box-shadow: 10px 10px 8px #888888;
 }
@@ -40,13 +41,15 @@
   width: 40vh;
   border-radius: 50%;
   border-style: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
 }
 
 .h-list-image {
   height: 40vh;
   width: 40vh;
   object-fit: cover;
-
+  
 }
 
 .h-category-list:hover .zoom-image {

@@ -3,14 +3,31 @@ li .h-navItems{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    text-decoration: none;
+
+    /* z-index: 100; */
 }
 
 .h-homeicon {
     color: white;
+    text-decoration: none;
+
+    /* z-index: 100; */
 }
 
 .box{
     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+    /* box-shadow: 0px 5px 10px 0px #060506 */
+    /* z-index: 100; */
+}
+
+.box .container{
+    z-index: 100;
+}
+
+.box .header-bottom{
+    z-index: 5;
 }
 
 .h-sign-in-up{
@@ -18,8 +35,12 @@ li .h-navItems{
     justify-content: center;
     align-items: center;
     flex-direction: row;
+
+    z-index: 100;
 }
 
 .box .header-bottom{
-    background-color: #f1f2f4;
+    background-color: #e6dfe6;
+
+    z-index: 100;
 }
