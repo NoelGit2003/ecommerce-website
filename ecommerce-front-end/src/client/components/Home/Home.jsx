@@ -12,24 +12,24 @@ import './Home.css'
 const Home = () => {
   return (
     <div className='home'>
-
-      <Parallax
-        bgImage="./Home Background/background.jpg"
-        strength={500}
-        className='home-parallax'
-      >
-        <div className="home-carousel">
-          <Carouselslider />
-        </div>
-        <div className="home-banner">
-          <Banner />
-        </div>
-
-      </Parallax>
-
-      <div className="home-category">
-        <Category />
+      <div className="home-head-parallax">
+        <Parallax
+          bgImage="./Home Background/background.jpg"
+          strength={500}
+          className='home-parallax'
+        >
+          <div className="home-carousel">
+            <Carouselslider />
+          </div>
+          <div className="home-banner">
+            <Banner />
+          </div>
+          <div className="home-category">
+            <Category />
+          </div>
+        </Parallax>
       </div>
+
       <div className="home-collections">
         <Collections />
       </div>
@@ -39,6 +39,7 @@ const Home = () => {
       <div className="home-help">
         <Help />
       </div>
+
 
     </div>
   )

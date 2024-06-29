@@ -9,13 +9,20 @@
 }
 
 .home-parallax {
-    display: absolute;
-    box-shadow: -30px 0px 40px 0px #e4e4e6 inset;
+    position: relative;
+    z-index: 1;
 }
 
+.home-category{
+    /* box-shadow: -30px 0px 40px 0px #e4e4e6 inset; */
+    background: linear-gradient(to top, #f1f2f4, rgba(25, 0, 255, 0));
+}
 
-.home-parallax {
+.home-category,
+.home-collections,
+.home-services,
+.home-help {
+    padding: 20px;
     position: relative;
-    box-shadow: inset 0px -20px 20px rgba(0, 0, 0, 0.3);
-    /* Inset box shadow at the bottom */
+    z-index: 2; 
 }

@@ -16,7 +16,9 @@
   /* background-color: white; */
   background: linear-gradient(to bottom, #e6dfe6, rgba(255, 255, 255, 1));
 
-  box-shadow: 10px 10px 8px #888888;
+  /* box-shadow: 8px 8px 18px #b1c6d7; */
+  box-shadow: 8px 8px 18px #8d8d99;
+
 }
 
 .h-category-heading {
@@ -24,8 +26,6 @@
   margin-bottom: 10vh;
   /* font-family: 'AvenirLTW01-85'; */
   /* font-family: 'Wix Madefor Text VF'; */
-
-
 }
 
 .h-category-box {
@@ -49,7 +49,7 @@
   height: 40vh;
   width: 40vh;
   object-fit: cover;
-  
+
 }
 
 .h-category-list:hover .zoom-image {
