@@ -11,7 +11,7 @@ function Sidebar() {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     return (
-        <>
+        <section className='h-sidebar'>
             {/* <Button variant="primary" onClick={handleShow}>
                 Launch
             </Button> */}
@@ -24,7 +24,7 @@ function Sidebar() {
                 </div>
             </div>
 
-            <Offcanvas show={show} onHide={handleClose} className='text-bg-dark'>
+            <Offcanvas show={show} onHide={handleClose} className='text-bg-dark sidebar-offcanvas'>
 
                 <Offcanvas.Header closeButton >
                     <div className="sidebar-logo d-flex justify-content-center align-items-center">
@@ -34,14 +34,14 @@ function Sidebar() {
                 <hr />
                 <Offcanvas.Body>
                     <div>
-                        <Offcanvas.Title style={{ fontSize: '40px', marginLeft: "20px" }} >Categories</Offcanvas.Title>
+                        <Offcanvas.Title style={{ fontSize: '40px', marginLeft: "20px" }} className='so-item' >Categories</Offcanvas.Title>
                     </div>
                     <div className="flex-shrink-0 p-3" style={{ width: "280px" }}>
 
                         <ul className="list-unstyled ps-0">
                             <li className="mb-1 list-item">
 
-                                <button style={{ color: "white", marginTop: "10px" }} className="btn btn-toggle d-inline-flex align-items-center rounded border-0 side-category" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
+                                <button style={{ color: "white", marginTop: "10px" }} className="so-item btn btn-toggle d-inline-flex align-items-center rounded border-0 side-category" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
                                     <svg style={{ marginRight: "5px" }} xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
                                         <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
                                     </svg>
@@ -50,19 +50,19 @@ function Sidebar() {
                                 <div className="collapse" id="home-collapse">
                                     <ul className="btn-toggle-nav list-unstyled fw-normal pb-1 small sub-list">
 
-                                        <li><a className="dropdown-item ms-10" href="#">Men</a></li>
-                                        <li><a className="dropdown-item" href="#">Women</a></li>
+                                        <li><a className="dropdown-item ms-10 so-item" href="#">Men</a></li>
+                                        <li><a className="dropdown-item so-item" href="#">Women</a></li>
                                        
                                     </ul>
                                 </div>
                             </li>
                             <li className="mb-1 list-item">
-                                <button style={{ color: "white", marginLeft: "20px", marginTop: "10px" }} className="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed side-category" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+                                <button style={{ color: "white", marginLeft: "20px", marginTop: "10px" }} className="so-item btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed side-category" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
                                     Electronics
                                 </button>
                             </li>
                             <li className="mb-1 list-item">
-                                <button style={{ color: "white", marginLeft: "20px", marginTop: "10px" }} className="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed side-category" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+                                <button style={{ color: "white", marginLeft: "20px", marginTop: "10px" }} className="so-item btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed side-category" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
                                     Beauty Products
                                 </button>
                             </li>
@@ -70,7 +70,7 @@ function Sidebar() {
                     </div>
                 </Offcanvas.Body>
             </Offcanvas>
-        </>
+        </section>
     )
 }
 

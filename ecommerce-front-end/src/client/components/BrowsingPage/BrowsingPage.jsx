@@ -34,12 +34,43 @@ const BrowsingPage = () => {
                             <div className="bp-right-sortby"> <span>Sort by</span> </div>
                         </div>
                     </div>
-                    <div className="bp-cards">
-                       <ProductCard />
+                    <div className="bp-card-container">
+
+                        <span className="bp-card-group">
+                            <ProductCard />
+                        </span>
+                        <span className="bp-card-group">
+                            <ProductCard />
+                        </span>
+                        <span className="bp-card-group">
+                            <ProductCard />
+                        </span>
+                        <span className="bp-card-group">
+                            <ProductCard />
+                        </span>
+                        <span className="bp-card-group">
+                            <ProductCard />
+                        </span>
+                        <span className="bp-card-group">
+                            <ProductCard />
+                        </span>
+                        <span className="bp-card-group">
+                            <ProductCard />
+                        </span>
+                        <span className="bp-card-group">
+                            <ProductCard />
+                        </span>
+                        <span className="bp-card-group">
+                            <ProductCard />
+                        </span>
+                        <span className="bp-card-group">
+                            <ProductCard />
+                        </span>
+
                     </div>
                 </div>
             </div>
-            {/* <Help/> */}
+            <Help/>
         </div>
     );
 };

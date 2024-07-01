@@ -9,6 +9,7 @@ import Home from './client/components/Home/Home'
 import Dashboard from './admin/components/Dashboard/Dashboard'
 import BrowsingPage from './client/components/BrowsingPage/BrowsingPage'
 import './App.css'
+import ProductDetails from './client/components/ProductDetails/ProductDetails'
 
 
 
@@ -37,13 +38,11 @@ const App = () => {
           <header className='header'>
             <Header />
           </header>
-          {/* <div className='home-background'>
-            <img src="./Home Background/background.jpg" />
-          </div> */}
           <Routes>
             <Route element={<Home />} path='/'></Route>
             <Route element={<Dashboard />} path='/admin'></Route>
             <Route element={<BrowsingPage />} path='/category'></Route>
+            <Route element={<ProductDetails/>} path='/productDetails'></Route>
           </Routes>
           <footer className='footer'>
             <Footer />

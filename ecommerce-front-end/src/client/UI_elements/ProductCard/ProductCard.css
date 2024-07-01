@@ -1,3 +1,13 @@
+.bp-cards{
+    /* height: auto; */
+    padding: 20px 10px;
+
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    gap: 10px;
+}
+
 .bp-card {
     display: flex;
     flex-direction: column;
@@ -6,7 +16,8 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     background-color: #f1f2f4;
-    transition: box-shadow 0.3s ease-in-out; /* Add transition for smooth hover effect */
+    transition: box-shadow 0.3s ease-in-out; 
+    width: 200px;
 }
 
 @keyframes levitate {
@@ -32,13 +43,13 @@
     border-radius: 10px;
 }
 
-/* .bp-card-image:hover{
-    scale: 1.1;
-} */
+.bp-card-image:hover{
+    scale: 1.05;
+}
 
 .bp-card-details {
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: flex-start;
     flex-direction: column;
 }
@@ -77,14 +88,14 @@
 
 @media (max-width: 480px) {
     .bp-card-image {
-        max-width: 150px;
-        max-height: 150px;
+        max-width: 200px;
+        max-height: 200px;
     }
 }
 
 @media (max-width: 320px) {
     .bp-card-image {
-        max-width: 100px;
-        max-height: 100px;
+        max-width: 180px;
+        max-height: 180px;
     }
 }

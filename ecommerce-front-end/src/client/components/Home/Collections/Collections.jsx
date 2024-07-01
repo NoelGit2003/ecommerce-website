@@ -2,7 +2,7 @@ import React from 'react'
 import SwiperCard from '../../../UI_elements/SwiperCard/SwiperCard';
 import './Collections.css'
 
-const Collections = () => {
+const Collections = (props) => {
 
   return (
     <section className='h-collections'>
@@ -10,7 +10,7 @@ const Collections = () => {
       <div className="collection-head">
 
         <div className='collection-item'>
-          <h1>Best Sellers</h1>
+          <h1>{props.title}</h1>
         </div>
 
         <SwiperCard className='collection-item collection-slider' />

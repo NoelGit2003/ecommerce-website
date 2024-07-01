@@ -31,7 +31,8 @@ const Home = () => {
       </div>
 
       <div className="home-collections">
-        <Collections />
+        <Collections title='Best Sellers' />
+        <Collections title='On Discount' />
       </div>
       <div className="home-services">
         <Services />

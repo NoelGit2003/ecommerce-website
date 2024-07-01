@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import 'swiper/css';
@@ -91,18 +92,20 @@ const SwiperCard = () => {
         <SwiperSlide key={i}>
           <div className="card">
             <div className="card-details">
-              <img src={card.image} alt="collection_image" className="card-image" />
-              <div className="card-name">{card.name}</div>
-              <div className="card-price">
-                <span>{currency}</span>
-                <span>{card.price}</span>
-              </div>
-              <div className="card-rating">
-                <span className='star-rating'>
-                  {renderStars(card.rating)}
-                </span>
-                <span className="card-rating-number">{card.rating}</span>
-              </div>
+              <NavLink to='/productDetails'>
+                <img src={card.image} alt="collection_image" className="card-image" />
+                <div className="card-name">{card.name}</div>
+                <div className="card-price">
+                  <span>{currency}</span>
+                  <span>{card.price}</span>
+                </div>
+                <div className="card-rating">
+                  <span className='star-rating'>
+                    {renderStars(card.rating)}
+                  </span>
+                  <span className="card-rating-number">{card.rating}</span>
+                </div>
+              </NavLink>
             </div>
           </div>
         </SwiperSlide>

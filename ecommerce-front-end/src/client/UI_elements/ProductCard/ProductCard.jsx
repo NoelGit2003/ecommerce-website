@@ -31,12 +31,11 @@ const ProductCard = () => {
 
 
     return (
-        <>
+        <section className='bp-cards'>
             <div className="bp-card">
                 <div className="bp-card-details">
                     <div className="bp-card-img">
-
-                    <img src={card.image} alt="bp_image" className="bp-card-image" />
+                        <img src={card.image} alt="bp_image" className="bp-card-image" />
                     </div>
 
                     <div className="bp-card-name">{card.name}</div>
@@ -52,7 +51,7 @@ const ProductCard = () => {
                     </div>
                 </div>
             </div>
-        </>
+        </section>
     )
 }
 
