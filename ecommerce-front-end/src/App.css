@@ -1,8 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
 
-.app {
+*{
     font-family: "Exo 2", sans-serif;
     font-optical-sizing: auto;
+}
+
+.app {
     opacity: 0;
     animation: fadeIn 2s forwards;
 }

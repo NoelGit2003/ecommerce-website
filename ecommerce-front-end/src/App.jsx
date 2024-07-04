@@ -3,16 +3,14 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { useState, createContext, useEffect } from 'react'
 import axios from 'axios'
 
+import './App.css'
 import Header from './client/components/Header/Header'
 import Footer from './client/components/Footer/Footer'
 import Home from './client/components/Home/Home'
 import Dashboard from './admin/components/Dashboard/Dashboard'
 import BrowsingPage from './client/components/BrowsingPage/BrowsingPage'
-import './App.css'
 import ProductDetails from './client/components/ProductDetails/ProductDetails'
-
-
-
+import Cart from './client/components/Cart/Cart'
 
 
 export const userContext = createContext()
@@ -43,6 +41,7 @@ const App = () => {
             <Route element={<Dashboard />} path='/admin'></Route>
             <Route element={<BrowsingPage />} path='/category'></Route>
             <Route element={<ProductDetails/>} path='/productDetails'></Route>
+            <Route element={<Cart />} path='/cart'></Route>
           </Routes>
           <footer className='footer'>
             <Footer />

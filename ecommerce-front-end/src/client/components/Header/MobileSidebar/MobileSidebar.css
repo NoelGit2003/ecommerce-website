@@ -1,0 +1,27 @@
+div .h-mobile-list{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+}
+
+.h-mobile-list .h-navItems{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: row;
+    gap: 10px;
+
+    width: 30vw;
+}
+
+.h-mobile-list .h-navItems svg{
+    min-width: 24px;
+}
+
+.h-mobile-list .h-navItems div{
+    display: flex;
+    justify-content: start;
+}

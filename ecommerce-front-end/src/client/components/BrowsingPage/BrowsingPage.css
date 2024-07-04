@@ -78,8 +78,6 @@ div {
     flex-direction: column;
 
     width: auto;
-    /* flex-grow: 2; */
-
 }
 
 .bp-head {
@@ -103,7 +101,7 @@ div {
         justify-content: space-between;
         width: 92vw;
         /* width: auto; */
-    
+
         padding: 1rem 2rem;
     }
 }
@@ -114,22 +112,26 @@ div {
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
+
+    margin-bottom: 5rem;
 }
 
 @media (min-width: 992px) {
     .bp-filter-right .bp-right-mobile {
         display: none;
     }
+    .bp-sidebar-sort-section{
+        display: none;
+    }
 }
 
 @media (max-width: 992px) {
-
     .bp-browsing-sidebar,
     .bp-right-sortby {
         display: none;
     }
 
-    
+
     .bp-card-container {
         width: 92vw;
         display: flex;

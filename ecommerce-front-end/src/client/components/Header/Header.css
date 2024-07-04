@@ -1,3 +1,7 @@
+.box .container{
+    padding: 0 50px;
+}
+
 li .h-navItems{
     display: flex;
     flex-direction: column;
@@ -43,4 +47,22 @@ li .h-navItems{
     background-color: #e6dfe6;
 
     z-index: 100;
+}
+/* 
+@media (max-width: 991px) {
+    li .header-mobile-sidebar{
+        display: none;
+    }
+} */
+
+@media (min-width: 991px) {
+    ul .header-mobile-sidebar{
+        display: none;
+    }
+}
+
+@media (max-width: 990px) {
+    ul .h-pc-list{
+        display: none;
+    }
 }

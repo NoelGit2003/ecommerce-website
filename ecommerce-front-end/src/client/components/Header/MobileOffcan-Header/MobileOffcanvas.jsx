@@ -22,11 +22,11 @@ const MobileOffcanvas = (props) => {
                 THis 
             </Alert> */}
 
-            <Offcanvas show={show} onHide={handleClose} responsive="lg" placement= { props.place } style={{backgroundColor: `${props.backcolor}`, color: `${props.textcolor}`}} >
-                <Offcanvas.Header closeButton>
+            <Offcanvas show={show} onHide={handleClose} responsive="lg" placement="end" style={{backgroundColor: `${props.backcolor}`, color: `${props.textcolor}`}} >
+                <Offcanvas.Header closeButton className='mb-0 pb-2'>
                     <Offcanvas.Title>{props.title}</Offcanvas.Title>
                 </Offcanvas.Header>
-                <Offcanvas.Body>
+                <Offcanvas.Body className='ps-0 pe-0 pt-0'>
                     {props.content}
                 </Offcanvas.Body>
                 <Offcanvas.Body>

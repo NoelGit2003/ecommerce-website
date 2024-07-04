@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import Dropdown from 'react-bootstrap/Dropdown';
+import DropdownButton from 'react-bootstrap/DropdownButton';
 
 import Help from '../Home/Help/Help';
 import BreadCrumb from '../../UI_elements/Breadcrumb/Breadcrumb';
@@ -29,9 +31,49 @@ const BrowsingPage = () => {
                         </div>
                         <div className="bp-filter-right">
                             <div className="bp-right-mobile">
-                                <MobileOffcanvas button='Filter' title='Filter' content={<BrowsingSidebar />} className='bp-mobile-filter' />
+                                <MobileOffcanvas
+                                    button={
+                                        <>
+                                            Filter{' '}
+                                            <img
+                                                src="./BrowsingPage Images/white-filter.png"
+                                                alt="Filter Icon"
+                                                className="filter-icon"
+                                                style={{width: '15px'}}
+                                            />
+                                        </>
+                                    }
+                                    title={
+                                        <span style={{fontSize: '40px'}}>
+                                            Filter
+                                        </span>
+                                    }
+                                    content={<BrowsingSidebar />}
+                                    place = 'end'
+                                    className="bp-mobile-filter"
+                                    backcolor="#f1f2f4"
+                                    textcolor="black" 
+                                />
                             </div>
-                            <div className="bp-right-sortby"> <span>Sort by</span> </div>
+                            <DropdownButton
+                                title={
+                                    <>
+                                        Sort by{' '}
+                                        <img src="./BrowsingPage Images/white-filter.png" alt="filter" style={{ width: '18px', margin: '0px' }} />
+                                    </>
+                                }
+                                className="bp-right-sortby"
+                                id="dropdown-basic-button"
+                                style={{ backgroundColor: 'blue', border: 'none', borderRadius: '5px', color: 'white' }}
+                                variant="secondary"
+                            >
+                                <>
+                                    <Dropdown.Item href="#/action-1">Name (A to Z)</Dropdown.Item>
+                                    <Dropdown.Item href="#/action-2">Name (Z to A)</Dropdown.Item>
+                                    <Dropdown.Item href="#/action-3">Price (Low to High)</Dropdown.Item>
+                                    <Dropdown.Item href="#/action-4">Price (High to Low)</Dropdown.Item>
+                                </>
+                            </DropdownButton>
                         </div>
                     </div>
                     <div className="bp-card-container">
@@ -70,8 +112,8 @@ const BrowsingPage = () => {
                     </div>
                 </div>
             </div>
-            <Help/>
-        </div>
+            <Help />
+        </div >
     );
 };
 

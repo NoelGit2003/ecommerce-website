@@ -43,7 +43,16 @@ const BrowsingSidebar = () => {
                         </div>
                     </div>
                 </div>
+            </div>
+            <div className="bp-sidebar-content bp-sidebar-sort-section mt-3">
+                <h4 className='bp-sidebar-head'> Sort by </h4>
                 <hr />
+                <ul className='bp-sidebar-list'>
+                    <li className='bp-sider-list-item'> Name (A to Z) </li>
+                    <li className='bp-sider-list-item'> Name (Z to A) </li>
+                    <li className='bp-sider-list-item'> Price (Low to High) </li>
+                    <li className='bp-sider-list-item'> Price (High to Low) </li>
+                </ul>
             </div>
         </div>
     )
