@@ -18,7 +18,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     background-color: #fff;
-    margin: 3px;
+    margin-bottom: 3px;
 }
 
 .card-image {
@@ -46,7 +46,7 @@
 .card-name {
     margin-top: 10px;
     font-size: 1.2em;
-    font-weight: bold;
+    font-weight: 400;
     color: #333;
 }
 
@@ -74,7 +74,17 @@
     }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 360px) {
+    .card-price {
+        margin-top: 5px;
+        /* font-size: 0.51em; */
+    }
+    
+    .card-name {
+        margin-top: 10px;
+        font-size: 1.2em;
+    }
+
     .card-image {
         max-width: 100px;
         max-height: 100px;

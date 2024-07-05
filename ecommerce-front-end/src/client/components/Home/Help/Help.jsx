@@ -2,34 +2,6 @@ import React from 'react'
 import './Help.css'
 import { Parallax } from 'react-parallax';
 
-// function Help() {
-//     return (
-//         <>
-//             <div className="help-main">
-//                 <Parallax
-//                     bgImage="./Help-center image/help center image.jpg"
-//                     strength={400}
-//                     className='h-image1'
-//                 >
-//                 <div className="h-section1">
-//                     <h2>
-//                         Need Help? Check <br /> Out Our Help Center
-//                     </h2>
-//                     <p>
-//                         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis saepe maxime itaque totam.
-//                     </p>
-//                     <button type="button" className="btn btn-light help-button rounded-5">Go to help center</button>
-//                 </div>
-//                 <div className="h-section2">
-
-//                     {/* <img className="h-image1" src="./Help-center image/help center image.jpg" alt="" /> */}
-//                 </div>
-//                 </Parallax>
-//             </div>
-//         </>
-//     )
-// }
-
 function Help() {
     return (
         <div className="help-main">
@@ -39,7 +11,7 @@ function Help() {
                         Need Help? Check <br /> Out Our Help Center
                     </h2>
                     <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.<br/> Nobis saepe maxime itaque totam.
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.<br /> Nobis saepe maxime itaque totam.
                     </p>
                     <button type="button" className="btn btn-light help-button rounded-5">Go to help center</button>
                 </div>

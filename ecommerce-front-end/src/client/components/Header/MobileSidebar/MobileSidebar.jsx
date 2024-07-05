@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 // import axios from 'axios'
 
@@ -9,6 +9,10 @@ import './MobileSidebar.css'
 
 const MobileSidebar = () => {
     const user = useContext(userContext)
+
+    // const [show, setShow] = useState(false);
+    // const handleClose = () => setShow(false);
+    // const handleShow = () => setShow(true);
 
     // const handleLogout = () => {
     //     axios.get('http://localhost:3000/logout')

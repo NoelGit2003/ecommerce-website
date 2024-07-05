@@ -1,0 +1,10 @@
+    .star-rating{
+        width: auto;
+       color: black;
+       display: flex;
+       flex-direction:row ;
+    }
+    .main-ProgressBar{
+        height: 3vh;
+        
+    }

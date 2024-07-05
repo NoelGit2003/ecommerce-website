@@ -40,10 +40,11 @@
 
 /* CSS */
 .b-btn {
+    color: white;
     padding-top: 3rem;
     font-size: larger;
     font-weight: 300;
-    
+
     align-items: center;
     appearance: none;
     background-color: #fff;
@@ -51,7 +52,7 @@
     border-style: none;
     box-shadow: rgba(0, 0, 0, .2) 0 5px 7px -1px, rgba(0, 0, 0, .14) 0 8px 12px 0, rgba(0, 0, 0, .12) 0 3px 20px 0;
     box-sizing: border-box;
-    color: #879198;
+    /* color: #879198; */
     cursor: pointer;
     display: inline-flex;
     fill: currentcolor;
@@ -111,4 +112,47 @@
 
 .b-btn:disabled {
     box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
+
+
+
+
+
+
+@media (max-width: 620px) {
+    .hb-item img {
+        height: 60vh;
+        width: auto;
+    }
+}
+
+@media (max-width: 560px) {
+    .hb-item img {
+        height: 40vh;
+        width: auto;
+    }
+
+    .hb-item .b-text {
+        padding: 1rem;
+
+        gap: 4px;
+    }
+
+    .b-text h4 {
+        font-size: 15px;
+    }
+
+    .b-text h1 {
+        font-size: 25px;
+    }
+
+    .b-text h5 {
+        font-size: 12px;
+    }
+
+    .b-text .b-btn {
+        width: 100px;
+        font-size: small;
+        font-weight: 300;
+    }
 }

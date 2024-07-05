@@ -17,17 +17,22 @@ const SwiperCard = () => {
     const fullStars = Math.floor(rating);
     const halfStar = rating % 1 !== 0;
     const stars = [];
-
+  
     for (let i = 0; i < fullStars; i++) {
-      stars.push(<i key={i} className="fas fa-star"></i>);
+      stars.push(<i key={`full-${i}`} className="fas fa-star"></i>);
     }
-
+  
     if (halfStar) {
-      stars.push(<i key={fullStars} className="fas fa-star-half-alt"></i>);
+      stars.push(<i key={`half-${fullStars}`} className="fas fa-star-half-alt"></i>);
     }
-
+  
+    const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
+    for (let i = 0; i < emptyStars; i++) {
+      stars.push(<i key={`empty-${fullStars + halfStar + i}`} className="far fa-star"></i>);
+    }
+  
     return stars;
-  }
+  };
 
   const data = [
     {
@@ -65,10 +70,14 @@ const SwiperCard = () => {
   return (
     <Swiper
       modules={[Navigation, Pagination, Scrollbar, A11y]}
-      spaceBetween={20}
+      spaceBetween={10}
       slidesPerView={4}
       navigation
       breakpoints={{
+        270: {
+          slidesPerView: 1,
+          spaceBetween: 10
+        },
         320: {
           slidesPerView: 1,
           spaceBetween: 10
@@ -92,9 +101,9 @@ const SwiperCard = () => {
         <SwiperSlide key={i}>
           <div className="card">
             <div className="card-details">
-              <NavLink to='/productDetails'>
+              <NavLink to='/productDetails' style={{textDecoration: 'none'}}>
                 <img src={card.image} alt="collection_image" className="card-image" />
-                <div className="card-name">{card.name}</div>
+                <div className="card-name" >{card.name}</div>
                 <div className="card-price">
                   <span>{currency}</span>
                   <span>{card.price}</span>
