@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
+import { NavLink } from 'react-router-dom';
 
 import Help from '../Home/Help/Help';
 import BreadCrumb from '../../UI_elements/Breadcrumb/Breadcrumb';
@@ -39,20 +40,20 @@ const BrowsingPage = () => {
                                                 src="./BrowsingPage Images/white-filter.png"
                                                 alt="Filter Icon"
                                                 className="filter-icon"
-                                                style={{width: '15px'}}
+                                                style={{ width: '15px' }}
                                             />
                                         </>
                                     }
                                     title={
-                                        <span style={{fontSize: '40px'}}>
+                                        <span style={{ fontSize: '40px' }}>
                                             Filter
                                         </span>
                                     }
                                     content={<BrowsingSidebar />}
-                                    place = 'end'
+                                    place='end'
                                     className="bp-mobile-filter"
                                     backcolor="#f1f2f4"
-                                    textcolor="black" 
+                                    textcolor="black"
                                 />
                             </div>
                             <DropdownButton
@@ -77,10 +78,11 @@ const BrowsingPage = () => {
                         </div>
                     </div>
                     <div className="bp-card-container">
-
-                        <span className="bp-card-group">
-                            <ProductCard />
-                        </span>
+                        <NavLink to='/productDetails'>
+                            <span className="bp-card-group">
+                                <ProductCard />
+                            </span>
+                        </NavLink>
                         <span className="bp-card-group">
                             <ProductCard />
                         </span>

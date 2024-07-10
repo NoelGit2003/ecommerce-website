@@ -14,7 +14,7 @@ const RegisterForm = () => {
         let showPasswordCheckbox;
 
         Swal.fire({
-            title: 'Register Form',
+            title: 'Register',
             html: `
                 <input type="text" id="name" class="swal2-input" placeholder="Name">
                 <input type="email" id="email" class="swal2-input" placeholder="Email">

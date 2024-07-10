@@ -7,6 +7,7 @@ import ProductProgress from '../../UI_elements/ProductProgress/ProductProgress'
 import Collections from '../Home/Collections/Collections'
 import Help from '../Home/Help/Help'
 import SwiperCard from '../../UI_elements/SwiperCard/SwiperCard';
+import { NavLink } from 'react-router-dom'
 const ProductDetails = () => {
 
   const renderStars = (rating) => {
@@ -59,18 +60,18 @@ const ProductDetails = () => {
       <div className="product-details-main">
         <div className="product-details-box">
           <div className="product-wrapper">
-            <div className="p-detail-list" style={{ marginLeft: "3vh" }}>
+            <div className="p-detail-list" >
               <div className="p-details-img-box">
                 {/* <img src="./ProductDetail Images/watch.jpg" alt="" /> */}
                 <img className="image-zoom" src="./ProductDetail Images/watch-3.jpg" alt="" />
               </div>
               <div className="p-description-wrapper">
-                <div style={{ marginTop: "3vh", fontSize: "1.9vh" }}>
+                <div className="p-breadcrumb" style={{ marginTop: "3vh", fontSize: "1.9vh" }}>
                   <Breadcrumb />
                 </div>
                 <div className="p-description">
                   <h6 style={{ color: "#949494" }}>Casada</h6>
-                  <h4> The Quad Series | All Black | Two Tone | Minimalism | Premium <br /> Analog Watch - For Men CSD-387-BLACK-BLK</h4>
+                  <p className='product-heading'> The Quad Series | All Black | Two Tone | Minimalism | Premium <br /> Analog Watch - For Men CSD-387-BLACK-BLK</p>
                   <div className="single-product-rating">
                     <div className="product-stars">
                       {renderStars(4)}
@@ -89,17 +90,19 @@ const ProductDetails = () => {
 
                 <div className="product-quantity">
                   <p>Quantity</p>
-                  <div className="product-input-price">
+                  <div className="product-input-price" >
                     <input type="text" id="quantity" value={value} />
-                    <div className="product-quantity-arrows">
+                    
                       <img onClick={increment} className='quantity-up-arrow' src="./ProductDetail Images/up-arrow.png" alt="" />
                       <img onClick={decrement} className='quantity-down-arrow' src="./ProductDetail Images/down-arrow.png" alt="" />
-                    </div>
+                    
                   </div>
                 </div>
                 <div className="product-shop-buttons">
                   <button className="btn btn-dark rounded-4 px-3 product-buttons " type="button">Add to cart</button>
-                  <button className="btn btn-dark rounded-4 px-3 ms-3 product-buttons" type="button">Buy Now</button>
+                  <NavLink to = "/orderNow" >
+                  <button className="btn btn-dark rounded-4 px-3  product-buttons" type="button">Buy Now</button>
+                  </NavLink>
                 </div>
 
                 <div className="product-information">
@@ -110,16 +113,17 @@ const ProductDetails = () => {
               </div>
             </div>
             <hr style={{ marginTop: '5vh' }} />
+
             <div className="product-ratings">
               <div className='product-reviews'>
-                <h4 style={{fontSize:"5vh"}}>Reviews</h4>
+                <h4 style={{ fontSize: "35px" }}>Reviews</h4>
                 <div className="review-stars">
                   <div className="star-section">
                     <div className="rating-stars">
                       {renderStars(3.5)}
                     </div>
                     <div>
-                    <p> 4.8 </p>
+                      <p> 4.8 </p>
                     </div>
                   </div>
 
@@ -135,8 +139,8 @@ const ProductDetails = () => {
                 <ProductProgress />
               </div>
             </div>
-              <hr style={{ marginTop: '5vh' }} />
-{/* 
+            <hr style={{ marginTop: '5vh' }} className='hr-below-bar' />
+            {/* 
             <div className="user-views">
               <div className="user1-review">
 
@@ -145,10 +149,10 @@ const ProductDetails = () => {
 
           </div>
         </div>
-          <div className="other-products">
-              <h4>You might also like</h4>
+        <div className="other-products">
+          <h4>You might also like</h4>
           <SwiperCard />
-          </div>
+        </div>
       </div>
 
     </>
