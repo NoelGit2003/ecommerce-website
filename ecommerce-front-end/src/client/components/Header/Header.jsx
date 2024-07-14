@@ -48,7 +48,7 @@ function Header() {
                           </div>
                         </NavLink>
                       </li>
-                      <li className='h-pc-list'>
+                      <li className='h-pc-list' style={{cursor: "pointer"}}>
                         <Sidebar />
                       </li>
                       <li className='h-pc-list'>
