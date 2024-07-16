@@ -11,7 +11,6 @@ import Dashboard from './admin/components/Dashboard/Dashboard'
 import BrowsingPage from './client/components/BrowsingPage/BrowsingPage'
 import ProductDetails from './client/components/ProductDetails/ProductDetails'
 import Cart from './client/components/Cart/Cart'
-import ForgotPassword from './client/components/ForgotPassword/ForgotPassword'
 
 
 export const userContext = createContext()
@@ -43,7 +42,6 @@ const App = () => {
             <Route element={<BrowsingPage />} path='/category'></Route>
             <Route element={<ProductDetails/>} path='/productDetails'></Route>
             <Route element={<Cart />} path='/cart'></Route>
-            <Route element={<ForgotPassword />} path='/forgotPwd'></Route>
           </Routes>
           <footer className='footer'>
             <Footer />

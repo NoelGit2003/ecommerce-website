@@ -1,0 +1,45 @@
+.admin-main{
+    padding: 1rem;
+
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    width: auto;
+}
+
+.admin-main .admin-sidebar {
+    width: 15vw;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+
+.admin-sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    /* align-items: start; */
+}
+
+.admin-sidebar h4 {
+    font-weight: 350;
+}
+
+.admin-sidebar .admin-sidebar-list .admin-sider-list-item {
+    font-weight: 300;
+    cursor: pointer;
+}
+
+.admin-sidebar .admin-sidebar-list {
+    padding-left: 15px;
+
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    gap: 10px;
+}

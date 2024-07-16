@@ -3,25 +3,17 @@ import Swal from 'sweetalert2';
 import axios from 'axios';
 
 
-
 const LoginForm = () => {
 
     const showLoginForm = async () => {
         let emailInput;
         let passwordInput;
 
- 
         Swal.fire({
             title: 'Login',
             html: `
                 <input type="email" id="email" class="swal2-input" placeholder="Email">
                 <input type="password" id="password" class="swal2-input" placeholder="Password">
-                <br/>
-                
-                <div id="newPwd" style="text-align: right;  margin-top: 7px; margin-bottom: 7px;  width: 360px; font-size: 14px; cursor: pointer;">
-                 Forgot Password?
-                 </div>
-                
             `,
             confirmButtonText: 'Sign in',
             // customClass: {
@@ -34,14 +26,6 @@ const LoginForm = () => {
                 passwordInput = popup.querySelector('#password');
                 emailInput.onkeyup = (event) => event.key === 'Enter' && Swal.clickConfirm();
                 passwordInput.onkeyup = (event) => event.key === 'Enter' && Swal.clickConfirm();
-                const forgotpwdDiv = document.getElementById("newPwd")
-                if(forgotpwdDiv){
-                forgotpwdDiv.addEventListener('click',() => {
-                    Swal.close();
-
-                    window.location.href = '/forgotPwd';
-                })
-                }
             },
             preConfirm: () => {
                 const email = emailInput.value;
@@ -66,17 +50,17 @@ const LoginForm = () => {
                             const decodedToken = JSON.parse(atob(token.split('.')[1]));
                             console.log(decodedToken);
 
-                            const toast = Swal.mixin({
-                                toast: true,
-                                position: 'top-right',
-                                showConfirmButton: false,
-                                timer: 3000,
-                                timerProgressBar: true,
-                                didOpen: (toast) => {
-                                    toast.addEventListener('mouseenter', Swal.stopTimer);
-                                    toast.addEventListener('mouseleave', Swal.resumeTimer);
-                                }
-                            });
+                            // const toast = Swal.mixin({
+                            //     toast: true,
+                            //     position: 'top-right',
+                            //     showConfirmButton: false,
+                            //     timer: 3000,
+                            //     timerProgressBar: true,
+                            //     didOpen: (toast) => {
+                            //         toast.addEventListener('mouseenter', Swal.stopTimer);
+                            //         toast.addEventListener('mouseleave', Swal.resumeTimer);
+                            //     }
+                            // });
 
 
                             if (decodedToken.isAdmin) {

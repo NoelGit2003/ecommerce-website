@@ -3,47 +3,41 @@
     background-color: #f1f2f4;
 }
 
-.admin-main{
-    padding: 1rem;
-
+.admin-dash-main{
     display: flex;
     flex-direction: row;
     gap: 1rem;
     width: auto;
 }
 
-.admin-main .admin-sidebar {
-    width: 15vw;
-    height: auto;
+.admin-content{
+    width: 80vw;
+}
+
+.admin-content-body tr{
+    display: flex;
+    width: 75vw;
+    justify-content: space-between;
+}
+
+.admin-content-body thead{
+    border-bottom: 1px solid black;
+    margin-bottom: 15px;
+}
+
+.admin-content tr th{
+    width: 150px;
 
     display: flex;
-    flex-direction: column;
     justify-content: start;
+    align-items: center;
 }
 
+.admin-content tr td{
+    width: 150px;
+    padding: 5px;
 
-.admin-sidebar {
     display: flex;
-    flex-direction: column;
     justify-content: start;
-    /* align-items: start; */
-}
-
-.admin-sidebar h4 {
-    font-weight: 350;
-}
-
-.admin-sidebar .admin-sidebar-list .admin-sider-list-item {
-    font-weight: 300;
-}
-
-.admin-sidebar .admin-sidebar-list {
-    padding-left: 15px;
-
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: start;
-    gap: 10px;
+    align-items: center;
 }

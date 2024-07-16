@@ -3,6 +3,7 @@ const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
 const mongoose = require('mongoose')
 
+//User logined 
 const userDefault = ((req, res) => {
     return res.json({
         email: req.email,
@@ -11,7 +12,6 @@ const userDefault = ((req, res) => {
         isBlocked: req.isBlocked
     })
 })
-
 
 //Register user or admin API
 const userRegister = ((req, res) => {
@@ -55,11 +55,12 @@ const userLogin = ((req, res) => {
         .catch(err => console.log(err))
 });
 
-
+//logout
 const userLogout = ((req, res) => {
     res.clearCookie('token');
     return res.json('Success')
 })
+
 
 
 module.exports = { userDefault, userLogin, userLogout, userRegister }

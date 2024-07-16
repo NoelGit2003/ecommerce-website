@@ -12,6 +12,7 @@ const path = require('path')
 const dbConnect = require('./config/dbConnect')
 const verifyUser = require('./middleware/userMiddleware')
 const authRouter = require('./routes/authRoutes')
+const adminRouter = require('./routes/adminRoutes')
 
 //Connect database
 dbConnect();
@@ -29,6 +30,7 @@ app.use(express.static('public'))
 
 
 app.use('/', authRouter)
+app.use('/admin', adminRouter)
 
 
 app.listen('3000', () => {
