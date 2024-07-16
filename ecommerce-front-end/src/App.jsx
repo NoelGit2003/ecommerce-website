@@ -11,6 +11,7 @@ import Dashboard from './admin/components/Dashboard/Dashboard'
 import BrowsingPage from './client/components/BrowsingPage/BrowsingPage'
 import ProductDetails from './client/components/ProductDetails/ProductDetails'
 import Cart from './client/components/Cart/Cart'
+import AdminProducts from './admin/components/Admin-Products/AdminProducts'
 
 
 export const userContext = createContext()
@@ -38,10 +39,12 @@ const App = () => {
           </header>
           <Routes>
             <Route element={<Home />} path='/'></Route>
-            <Route element={<Dashboard />} path='/admin'></Route>
             <Route element={<BrowsingPage />} path='/category'></Route>
             <Route element={<ProductDetails/>} path='/productDetails'></Route>
             <Route element={<Cart />} path='/cart'></Route>
+
+            <Route element={<Dashboard />} path='/admin'></Route>
+            <Route element={<AdminProducts />} path='/admin/products'></Route>
           </Routes>
           <footer className='footer'>
             <Footer />

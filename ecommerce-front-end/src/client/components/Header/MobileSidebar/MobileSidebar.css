@@ -4,7 +4,7 @@ div .h-mobile-list{
     align-items: start;
     flex-direction: column;
     gap: 10px;
-    padding: 10px;
+    padding: 10px 0px;
 }
 
 .h-mobile-list .h-navItems{

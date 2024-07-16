@@ -97,9 +97,7 @@ function Header() {
                       </>
                     }
                     content={
-                      <>
-                        <MobileSidebar />
-                      </>
+                      <MobileSidebar />
                     }
                     className="header-mobile-sidebar-component"
                     backcolor="#212529"
@@ -113,7 +111,7 @@ function Header() {
 
         <div className="header-bottom px-3 py-3 border-bottom">
           <div className="container d-flex flex-wrap justify-content-center">
-            <form className="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto" role="search">
+            <form className="header-bottom-form col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto" role="search">
               <input type="search" className="form-control" placeholder="Search..." aria-label="Search" />
             </form>
 

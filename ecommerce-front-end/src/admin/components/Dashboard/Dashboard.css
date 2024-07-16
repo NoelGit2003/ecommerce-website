@@ -22,7 +22,19 @@
 
 .admin-content-body thead{
     border-bottom: 1px solid black;
-    margin-bottom: 15px;
+}
+
+.admin-content-body tbody .btn{
+    width: 100px;
+}
+
+.admin-content-body tbody .btn-primary{
+    color: white;
+    background-color: #7066e0 !important;
+    border: none;
+}
+.admin-content-body tbody .btn-primary:hover{
+    background-color: #5c53b9 !important;
 }
 
 .admin-content tr th{

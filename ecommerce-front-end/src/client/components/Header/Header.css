@@ -65,4 +65,15 @@ li .h-navItems{
     ul .h-pc-list{
         display: none;
     }
+    .box .header-bottom{
+        height: 50px;
+        padding: 5px !important;
+    }
+    div .header-bottom-form{
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    .h-sign-in-up{
+        display: none;
+    }
 }
