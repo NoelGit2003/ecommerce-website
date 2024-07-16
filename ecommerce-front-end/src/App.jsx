@@ -7,12 +7,13 @@ import './App.css'
 import Header from './client/components/Header/Header'
 import Footer from './client/components/Footer/Footer'
 import Home from './client/components/Home/Home'
-import Dashboard from './admin/components/Dashboard/Dashboard'
 import BrowsingPage from './client/components/BrowsingPage/BrowsingPage'
 import ProductDetails from './client/components/ProductDetails/ProductDetails'
 import Cart from './client/components/Cart/Cart'
-import AdminProducts from './admin/components/Admin-Products/AdminProducts'
 
+import Dashboard from './admin/components/Dashboard/Dashboard'
+import AdminProducts from './admin/components/Admin-Products/AdminProducts'
+import AdminCategories from './admin/components/Admin-Categories/AdminCategories'
 
 export const userContext = createContext()
 
@@ -45,6 +46,7 @@ const App = () => {
 
             <Route element={<Dashboard />} path='/admin'></Route>
             <Route element={<AdminProducts />} path='/admin/products'></Route>
+            <Route element={<AdminCategories />} path='/admin/categories'></Route>
           </Routes>
           <footer className='footer'>
             <Footer />
