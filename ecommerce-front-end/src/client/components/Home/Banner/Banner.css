@@ -25,6 +25,8 @@
 .hb-item img {
     height: 70vh;
     width: auto;
+    max-width: 80vw;
+    max-height: 80vw;
 }
 
 .hb-item .b-text {

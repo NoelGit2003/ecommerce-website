@@ -56,6 +56,7 @@
     color: #888;
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .card-rating-number{
@@ -74,19 +75,29 @@
     }
 }
 
-@media (max-width: 360px) {
-    .card-price {
-        margin-top: 5px;
-        /* font-size: 0.51em; */
-    }
-    
-    .card-name {
+@media (max-width: 420px) {
+    div .card-name {
         margin-top: 10px;
-        font-size: 1.2em;
+        font-size: 0.9em;
     }
 
     .card-image {
         max-width: 100px;
         max-height: 100px;
     }
+
+    .card-price {
+        margin-top: 5px;
+        font-size: 0.7em;
+    }
+    
+    .card-name {
+        font-size: 1.2em;
+        font-weight: 400;
+    }
+    
+    .card-rating {
+        font-size: 0.7em;
+    }
+    
 }

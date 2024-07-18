@@ -15,7 +15,7 @@ const MobileOffcanvas = (props) => {
             <Button className="btn btn-secondary mobile-filter-button" onClick={handleShow}>
                 {props.button}
             </Button>
-            <Offcanvas show={show} onHide={handleClose} responsive="lg" placement="end" style={{backgroundColor: `${props.backcolor}`, color: `${props.textcolor}`}}>
+            <Offcanvas show={show} onHide={handleClose} responsive="lg" placement="end" style={{ backgroundColor: `${props.backcolor}`, color: `${props.textcolor}` }}>
                 <Offcanvas.Header closeButton className='mb-0 pb-2'>
                     <Offcanvas.Title>{props.title}</Offcanvas.Title>
                 </Offcanvas.Header>

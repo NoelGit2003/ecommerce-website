@@ -29,9 +29,9 @@ function Header() {
           <div className="container">
             <div className="d-flex align-items-center justify-content-center justify-content-lg-start">
 
-              <a href="/" className="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
-                <img src="https://static.vecteezy.com/system/resources/previews/000/390/524/original/modern-company-logo-design-vector.jpg" className="bi me-2 rounded-circle" width="70" height="70" role="img" alt="logo" />
-              </a>
+              <NavLink to="/" className="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+                <img src="https://static.vecteezy.com/system/resources/previews/000/390/524/original/modern-company-logo-design-vector.jpg" className="head-logo bi me-2 rounded-circle" role="img" alt="logo" />
+              </NavLink>
 
               <ul className="nav col-12 col-lg-auto my-2 justify-content-end my-md-0 text-small">
                 {

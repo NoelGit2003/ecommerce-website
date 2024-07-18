@@ -1,3 +1,8 @@
+div .head-logo{
+    width: 70px;
+    height: 70px;
+}
+
 .box .container{
     padding: 0 50px;
 }
@@ -62,6 +67,13 @@ li .h-navItems{
 }
 
 @media (max-width: 990px) {
+    div .head-logo{
+        width: 50px;
+        height: 50px;
+    }
+    .box .container{
+        padding: 0 30px;
+    }
     ul .h-pc-list{
         display: none;
     }

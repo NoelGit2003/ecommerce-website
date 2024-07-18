@@ -1,16 +1,10 @@
 //Importing Libraries
 const express = require('express')
-// const mongoose = require('mongoose')
 const cors = require('cors')
-// const bcrypt = require('bcrypt') //encryption
-// const jwt = require('jsonwebtoken') //login token
-const cookieParser = require('cookie-parser') //session cookies
-const multer = require('multer') //image upload
-const path = require('path')
+const cookieParser = require('cookie-parser')
 
-
+//importing mvc components
 const dbConnect = require('./config/dbConnect')
-const verifyUser = require('./middleware/userMiddleware')
 const authRouter = require('./routes/authRoutes')
 const adminRouter = require('./routes/adminRoutes')
 
@@ -27,6 +21,7 @@ app.use(cors({
 }))
 app.use(cookieParser())
 app.use(express.static('public'))
+app.use(express.urlencoded({ extended: true }));
 
 
 app.use('/', authRouter)

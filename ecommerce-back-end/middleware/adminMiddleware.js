@@ -1,4 +1,6 @@
 const jwt = require('jsonwebtoken');
+const multer = require('multer')
+const path = require('path')
 
 const verifyAdmin = (req, res, next) => {
     const token = req.cookies.token;
@@ -24,4 +26,18 @@ const verifyAdmin = (req, res, next) => {
     }
 };
 
-module.exports = verifyAdmin;
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, path.join(__dirname, '../storage', 'uploads'));
+    },
+    filename: function (req, file, cb) {
+        const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
+        cb(null, file.fieldname + '-' + uniqueSuffix)
+    }
+})
+const uploadDest = multer({ storage: storage })
+
+
+module.exports = {
+    verifyAdmin, uploadDest
+}

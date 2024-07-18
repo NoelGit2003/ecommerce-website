@@ -49,7 +49,7 @@ const userLogin = ((req, res) => {
                     }
                 })
             } else {
-                res.json('User not exist')
+                return res.json('User not exist')
             }
         })
         .catch(err => console.log(err))

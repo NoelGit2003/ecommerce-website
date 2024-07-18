@@ -8,7 +8,7 @@ const AdminProducts = () => {
       <div className="admin-dash-main">
         <AdminSidebar />
         <div className="admin-content">
-
+            
         </div>
       </div>
     </section>
