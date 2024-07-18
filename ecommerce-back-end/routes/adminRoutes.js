@@ -14,6 +14,6 @@ router.get('/', getUsers)
 router.put('/changeRole', changeRole)
 router.put('/blockUser', blockUser)
 
-router.post('/upload', uploadDest.single('uploaded_file'), uploadProduct);
+router.post('/upload', uploadDest.single('product'), uploadProduct);
 
 module.exports = router
