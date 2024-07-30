@@ -8,8 +8,7 @@ UserSchema = new mongoose.Schema({
     isAdmin: Boolean,
     isBlocked: Boolean
 })
+
 UserModel = mongoose.model('user', UserSchema)
-
-
 
 module.exports = UserModel;

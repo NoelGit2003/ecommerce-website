@@ -1,5 +1,5 @@
-const { json } = require('express');
 const UserModel = require('../models/User')
+const ProductModel = require('../models/Product')
 
 //get all users by admin
 const getUsers = (req, res) => {
@@ -56,11 +56,16 @@ const uploadProduct = (req, res) => {
     // req.file is the name of your file in the form above, here 'uploaded_file'
     // req.body will hold the text fields, if there were any 
     try {
-        console.log(req.file)
         if (!req.file) {
             return res.status(400).json({ error: 'No file uploaded' });
         }
-        return res.json(req.file);
+
+        ProductModel.create({
+            ProductImage: req.file.filename
+        })
+        .then(res => console.log(res))
+        .catch(err => console.log(err))
+
     } catch (err) {
         return res.status(500).json({ error: 'An error occurred', details: err.message });
     }

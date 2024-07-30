@@ -74,7 +74,7 @@ const RegisterForm = () => {
                 console.log(`Name: ${name}, Email: ${email}, Mobile: ${mobile}, Password: ${password}, isAdmin: ${isAdmin}, isBlocked: ${isBlocked}`);
 
                 axios.post("http://localhost:3000/register", { name, email, mobile, password, isAdmin, isBlocked })
-                    .then((res) => {
+                    .then(() => {
                         Swal.fire({
                             icon: 'success',
                             title: 'Registration Successful',

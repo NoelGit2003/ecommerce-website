@@ -19,7 +19,7 @@ const verifyAdmin = (req, res, next) => {
                 if (!req.isAdmin) {
                     return res.status(403).json('Access denied.');
                 }
-
+                
                 next();
             }
         });
@@ -32,7 +32,8 @@ const storage = multer.diskStorage({
     },
     filename: function (req, file, cb) {
         const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
-        cb(null, file.fieldname + '-' + uniqueSuffix)
+        const extension = path.extname(file.originalname);
+        cb(null, file.fieldname + '-' + uniqueSuffix + extension);
     }
 })
 const uploadDest = multer({ storage: storage })

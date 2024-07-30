@@ -2,7 +2,7 @@ const {
     getUsers, changeRole, blockUser, uploadProduct
 } = require('../controller/adminController')
 
-const{
+const {
     verifyAdmin, uploadDest
 } = require('../middleware/adminMiddleware')
 

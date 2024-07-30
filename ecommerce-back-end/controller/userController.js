@@ -1,7 +1,8 @@
 const UserModel = require('../models/User')
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
-const mongoose = require('mongoose')
+
+const JWT_SECRET = '444d2bad95c2d9e69eee91b7d266a8f3ab96359f3ef402a384aa984b7eb5c0c1'
 
 //User logined 
 const userDefault = ((req, res) => {
@@ -61,6 +62,67 @@ const userLogout = ((req, res) => {
     return res.json('Success')
 })
 
+const userForgot = async (req, res) => {
+    const { email } = req.body
+    try {
+        const oldUser = await UserModel.findOne({ email })
+        if (!oldUser) {
+            return res.json({ status: "User does not exist." })
+        }
+        const secret = JWT_SECRET + oldUser.password
+        const token = jwt.sign(
+            { email: oldUser.email, id: oldUser._id },
+            secret,
+            { expiresIn: '5m' }
+        )
+        const link = `http://localhost:3000/reset-password/${oldUser._id}/${token}`
+        console.log(link)
+        return res.json({ status: "Password reset link generated.", link })
+    } catch (err) {
+        console.log(err)
+        return res.status(500).json({ status: "Error generating link." })
+    }
+}
 
+const userResetPwd = async (req, res) => {
+    const { id, token } = req.params
+    console.log(req.params)
 
-module.exports = { userDefault, userLogin, userLogout, userRegister }
+    const oldUser = await UserModel.findOne({ _id: id })
+    if (!oldUser) {
+        return res.json({ status: "User Not Exists!!" })
+    }
+    const secret = JWT_SECRET + oldUser.password
+
+    try {
+        const verify = jwt.verify(token, secret)
+        res.render("reset-password", { email: verify.email, id, token });
+    } catch (err) {
+        console.log(err)
+        res.send("Not Verified")
+    }
+}
+
+const userResetPwdSubmit = async (req, res) => {
+    const { id, token } = req.params
+    const { password } = req.body
+
+    const oldUser = await UserModel.findOne({ _id: id })
+    if (!oldUser) {
+        return res.json({ status: "User Not Exists!!" })
+    }
+    const secret = JWT_SECRET + oldUser.password
+
+    try {
+        const verify = jwt.verify(token, secret)
+        const hashedPassword = await bcrypt.hash(password, 10)
+        oldUser.password = hashedPassword
+        await oldUser.save()
+        res.json({ status: "Password reset successful" })
+    } catch (err) {
+        console.log(err)
+        res.send("Something went wrong")
+    }
+}
+
+module.exports = { userDefault, userLogin, userLogout, userRegister , userForgot, userResetPwd, userResetPwdSubmit}

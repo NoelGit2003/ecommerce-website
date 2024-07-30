@@ -22,8 +22,10 @@ app.use(cors({
 app.use(cookieParser())
 app.use(express.static('public'))
 app.use(express.urlencoded({ extended: true }));
+app.set('view engine', 'ejs')
 
 
+//Using app routes
 app.use('/', authRouter)
 app.use('/admin', adminRouter)
 
