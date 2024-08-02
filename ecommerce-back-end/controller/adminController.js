@@ -61,7 +61,8 @@ const uploadProduct = (req, res) => {
         }
 
         ProductModel.create({
-            ProductImage: req.file.filename
+            ProductImage: req.file.filename,
+            ProductName: req.body.prodName
         })
         .then(res => console.log(res))
         .catch(err => console.log(err))
