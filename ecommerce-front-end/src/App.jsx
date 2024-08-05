@@ -59,13 +59,7 @@ const App = () => {
             <Route element={<ProductDetails />} path='/productDetails'></Route>
             <Route element={<Cart />} path='/cart'></Route>
 
-
-
-
-
             <Route element={<ResetPwdNavigation />} path='/forgotPassword'></Route>
-            {/* <Route element={<OTP_Pass />} path='/otp_pass'></Route>
-            <Route element={<ResetPassword />} path='reset_password'></Route> */}
 
             <Route element={<Dashboard />} path='/admin'></Route>
             <Route element={<AdminProducts />} path='/admin/products'></Route>

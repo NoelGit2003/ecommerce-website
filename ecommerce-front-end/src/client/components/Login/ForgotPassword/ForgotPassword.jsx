@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect, useRef } from 'react';
 import axios from 'axios';
 
+import './Forgot.css'
 import { userContext } from '../../../../App';
 
 const ForgotPassword = () => {
@@ -48,7 +49,7 @@ const ForgotPassword = () => {
             <form onSubmit={navigateToOtp}>
                 <h3>Forgot Password?</h3>
                 <div className="mb-3">
-                    <label htmlFor="pwd-reset-link">Generate Link for password reset</label>
+                    <label className="mb-1" htmlFor="pwd-reset-link">Generate Link for password reset</label>
                     <input
                         type="text"
                         className='form-control'
@@ -61,7 +62,7 @@ const ForgotPassword = () => {
                 </div>
                 {error && <p className="text-danger">{error}</p>}
                 <div className="d-grid">
-                    <button type='submit' className='btn btn-primary'>
+                    <button type='submit' className='btn btn-light forgot-sub'>
                         Submit
                     </button>
                 </div>

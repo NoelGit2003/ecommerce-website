@@ -46,24 +46,24 @@ const OTP_Pass = () => {
 
     
     return (
-        <div>
-            <form onSubmit={verifyOTP}>
+        <div className='forgot-password'>
+            <form className='forgot_otp_form' onSubmit={verifyOTP}>
                 <div>
                     <h2>Enter OTP</h2>
                 </div>
                 <div>
                     <label htmlFor="otp">OTP has been sent to {forgotEmail}</label>
-                    <input type="text" placeholder='Enter OTP here' onChange={(e) => setOTP(e.target.value)}/>
+                    <input type="text" className='form-control' placeholder='Enter OTP here' onChange={(e) => setOTP(e.target.value)}/>
                 </div>
                 <div>
-                    <button type='submit'>Submit</button>
+                    <button className='btn btn-light forgot-sub' type='submit'>Submit</button>
                 </div>
-                <div>
+                <div className='otp_resend'>
                     <p> Didn't recieve code? </p>{" "}
                     <a 
                     style={{
                         color: disable? "gray": "blue",
-                        cursor: disable? "none": "pointer",
+                        cursor: disable? "normal": "pointer",
                         textDecoration: disable? "none": "underline"
                     }}
                     onClick={() => resentOTP()}

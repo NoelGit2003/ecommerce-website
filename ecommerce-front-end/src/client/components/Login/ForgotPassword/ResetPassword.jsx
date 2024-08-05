@@ -35,7 +35,7 @@ const ResetPassword = () => {
   };
 
   return (
-    <div>
+    <div className='forgot-password'>
       <form onSubmit={resetPwd}>
         <div>
           <h2>Change Password</h2>
@@ -43,7 +43,8 @@ const ResetPassword = () => {
         <div>
           <label htmlFor="pwd">New Password</label>
           <input
-            type="password"
+            type="text"
+            className='form-control'
             placeholder="New password"
             onChange={(e) => setPass(e.target.value)}
           />
@@ -52,16 +53,17 @@ const ResetPassword = () => {
           <label htmlFor="con-pwd">Confirm Password</label>
           <input
             type="password"
+            className='form-control'
             placeholder="Re-enter password"
             value={cpass}
             onChange={handlePasswordChange}
           />
         </div>
         <div>
-          {!same && <p className="danger">Passwords do not match</p>}
+          {!same && <p className="text-danger">Passwords do not match</p>}
         </div>
         <div>
-          <button type="submit" disabled={!same}>Reset Password</button>
+          <button type="submit" className='btn forgot-sub' disabled={!same}>Reset Password</button>
         </div>
       </form>
     </div>

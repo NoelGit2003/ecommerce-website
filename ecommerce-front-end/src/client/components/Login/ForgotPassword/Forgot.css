@@ -1,0 +1,45 @@
+.forgot-password{
+    height: 50vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.forgot-password form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+
+    width: 340px;
+
+    border: 2px solid black;
+    border-radius: 10px;
+
+    padding: 20px;
+}
+
+.forgot-sub{
+    background-color: #7066e0 !important;
+    color: white !important;
+    border: none !important;
+}
+
+
+.forgot-sub:hover{
+    background-color: #5c53b9 !important;
+    color: white !important;
+}
+
+.forgot_otp_form{
+    display: flex;
+    justify-content: start;
+}
+
+.forgot_otp_form .otp_resend{
+    display: flex;
+    justify-content: start;
+    gap: 2px;
+}
