@@ -3,9 +3,8 @@ const {
     userLogin,
     userRegister,
     userLogout,
-    userForgot,
-    userResetPwd,
-    userResetPwdSubmit
+    sendOTP,
+    userResetPwd
 } = require('../controller/userController')
 
 const verifyUser = require('../middleware/userMiddleware')
@@ -21,10 +20,8 @@ router.post('/login', userLogin)
 
 router.get('/logout', userLogout)
 
-router.post('/forgotPassword', userForgot)
+router.post('/reset_password_otp', sendOTP)
 
-router.get('/reset-password/:id/:token', userResetPwd)
-
-router.post('/reset-password/:id/:token', userResetPwdSubmit)
+router.put('/reset-password', userResetPwd)
 
 module.exports = router

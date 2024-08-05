@@ -9,7 +9,8 @@ import LoginForm from '../../Login/Login';
 import RegisterForm from '../../Register/Register';
 
 const MobileSidebar = ({ handleClose }) => {
-    const user = useContext(userContext);
+    const context = useContext(userContext)
+    const user = context.user;
 
     const handleLogout = () => {
         axios.get('http://localhost:3000/logout')

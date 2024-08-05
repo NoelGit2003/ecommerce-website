@@ -12,7 +12,11 @@ import './Header.css'
 import MobileSidebar from './MobileSidebar/MobileSidebar'
 
 function Header() {
-  const user = useContext(userContext)
+  const context = useContext(userContext)
+  const user = context.user;
+
+  // console.log('User in Header:', user);
+  // console.log('User name:', user.name);
 
   const handleLogout = () => {
     axios.get('http://localhost:3000/logout')
