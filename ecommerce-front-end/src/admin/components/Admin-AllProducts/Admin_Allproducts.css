@@ -1,0 +1,35 @@
+.product-box{
+     border-style: none;
+     border-radius: 20px;
+     height: auto;
+     width: auto;
+    margin: 30px 8px;
+    background-color: #f8f9fa;
+    padding: 30px;
+}
+
+.product_btn{
+     height: 50px;
+     width: 120px;
+     border-style: none;
+     border-radius: 10px;
+     color: white;
+     font-size: 20px;
+     background-color: #b98bb9;
+}
+
+.product-delete-btn{
+     /* background-color: #e6dfe6; */
+     margin-right: 10px;
+}
+
+li{
+     list-style: none;
+}
+
+img{
+     height: 90px;
+     width: 90px;
+     margin-bottom: 10px;
+}
+

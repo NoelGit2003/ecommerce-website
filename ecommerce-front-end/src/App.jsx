@@ -17,6 +17,8 @@ import ResetPassword from './client/components/Login/ForgotPassword/ResetPasswor
 
 import Dashboard from './admin/components/Dashboard/Dashboard'
 import AdminProducts from './admin/components/Admin-Products/AdminProducts'
+import Admin_AllProducts from './admin/components/Admin-AllProducts/Admin_AllProducts'
+import EditProduct from './admin/components/Admin-Products/EditProduct'
 import AdminCategories from './admin/components/Admin-Categories/AdminCategories'
 
 export const userContext = createContext()
@@ -64,6 +66,8 @@ const App = () => {
             <Route element={<Dashboard />} path='/admin'></Route>
             <Route element={<AdminProducts />} path='/admin/products'></Route>
             <Route element={<AdminCategories />} path='/admin/categories'></Route>
+            <Route element={<Admin_AllProducts />} path='/admin/Allproducts'></Route>
+            <Route element={<EditProduct />} path='/admin/edit/:id'></Route>
           </Routes>
           <footer className='footer'>
             <Footer />

@@ -2,6 +2,7 @@
 const express = require('express')
 const cors = require('cors')
 const cookieParser = require('cookie-parser')
+const path = require('path')
 
 //importing mvc components
 const dbConnect = require('./config/dbConnect')
@@ -20,7 +21,8 @@ app.use(cors({
     credentials: true
 }))
 app.use(cookieParser())
-app.use(express.static('public'))
+// app.use(express.static('public'))
+app.use('/uploads', express.static(path.join(__dirname, 'storage/uploads')));
 app.use(express.urlencoded({ extended: true }));
 app.set('view engine', 'ejs')
 

@@ -15,6 +15,9 @@ const AdminSidebar = () => {
                     <NavLink to='/admin/products' style={{ textDecoration: 'none', color: '#2e3236' }}>
                         <li className='admin-sider-list-item'> Products </li>
                     </NavLink>
+                    <NavLink to='/admin/Allproducts' style={{ textDecoration: 'none', color: '#2e3236' }}>
+                        <li className='admin-sider-list-item'>All Products </li>
+                    </NavLink>
                     <NavLink to='/admin/Categories' style={{ textDecoration: 'none', color: '#2e3236' }}>
                         <li className='admin-sider-list-item'> Categories </li>
                     </NavLink>
