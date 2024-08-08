@@ -58,7 +58,7 @@ const App = () => {
           <Routes>
             <Route element={<Home />} path='/'></Route>
             <Route element={<BrowsingPage />} path='/category'></Route>
-            <Route element={<ProductDetails />} path='/productDetails'></Route>
+            <Route element={<ProductDetails />} path='/productDetails/:id'></Route>
             <Route element={<Cart />} path='/cart'></Route>
 
             <Route element={<ResetPwdNavigation />} path='/forgotPassword'></Route>

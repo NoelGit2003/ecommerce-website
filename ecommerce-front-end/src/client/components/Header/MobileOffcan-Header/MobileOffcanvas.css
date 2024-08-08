@@ -1,8 +1,10 @@
 section .mobile-filter-button{
-    height: 35px;
-    width: 35px;
-    
     display: flex;
     justify-content: center;
     /* align-items: center; */
+}
+
+header section .mobile-filter-button{
+    height: 35px;
+    width: 35px;
 }

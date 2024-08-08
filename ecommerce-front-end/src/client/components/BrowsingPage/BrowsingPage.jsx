@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import { NavLink } from 'react-router-dom';
+import axios from 'axios'
 
 import Help from '../Home/Help/Help';
 import BreadCrumb from '../../UI_elements/Breadcrumb/Breadcrumb';
@@ -12,6 +13,21 @@ import './BrowsingPage.css';
 
 const BrowsingPage = () => {
 
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        const fetchProducts = async () => {
+            try {
+                const response = await axios.get('http://localhost:3000/client/getAllProducts');
+                await setProducts(response.data);
+                // console.log(products)
+            } catch (error) {
+                console.error('Error fetching products:', error);
+            }
+        };
+
+        fetchProducts();
+    }, []);
 
     return (
         <div className='browsing-page'>
@@ -78,39 +94,20 @@ const BrowsingPage = () => {
                         </div>
                     </div>
                     <div className="bp-card-container">
-                        <NavLink to='/productDetails'>
-                            <span className="bp-card-group">
-                                <ProductCard />
-                            </span>
-                        </NavLink>
-                        <span className="bp-card-group">
-                            <ProductCard />
-                        </span>
-                        <span className="bp-card-group">
-                            <ProductCard />
-                        </span>
-                        <span className="bp-card-group">
-                            <ProductCard />
-                        </span>
-                        <span className="bp-card-group">
-                            <ProductCard />
-                        </span>
-                        <span className="bp-card-group">
-                            <ProductCard />
-                        </span>
-                        <span className="bp-card-group">
-                            <ProductCard />
-                        </span>
-                        <span className="bp-card-group">
-                            <ProductCard />
-                        </span>
-                        <span className="bp-card-group">
-                            <ProductCard />
-                        </span>
-                        <span className="bp-card-group">
-                            <ProductCard />
-                        </span>
-
+                        {
+                            products.map(product => (
+                                <NavLink to={`/productDetails/${product._id}`} key={product._id}>
+                                    <span className="bp-card-group">
+                                        <ProductCard
+                                            name= {product.ProductName}
+                                            image= {`http://localhost:3000/uploads/${product.ProductImage}`}
+                                            price={product.ProductPrice}
+                                            rating={product.ProductRating}
+                                        />
+                                    </span>
+                                </NavLink>
+                            ))
+                        }
                     </div>
                 </div>
             </div>

@@ -65,12 +65,14 @@ const uploadProduct = async (req, res) => {
             ProductName: req.body.prodName,
             ProductTitle: req.body.prodTitle,
             ProductCategory: req.body.prodCategory,
+            ProductGenderCategory:req.body.prodGenderCategory,
             ProductPrice: req.body.prodPrice,
             ProductRating: req.body.prodRate,
             ProductDiscount: req.body.prodDiscount,
             ProductStock: req.body.prodStock,
             ProductSize: req.body.prodSize,
-            ProductColour: req.body.prodColour
+            ProductColour: req.body.prodColour,
+            ProductDescription:req.body.prodDescription
         });
 
         res.status(201).json(product);
@@ -133,12 +135,15 @@ const updateProduct = async (req, res) => {
             ProductName: req.body.prodName,
             ProductTitle: req.body.prodTitle,
             ProductCategory: req.body.prodCategory,
+            ProductGenderCategory:req.body.prodGenderCategory,
             ProductPrice: req.body.prodPrice,
             ProductRating: req.body.prodRate,
             ProductDiscount: req.body.prodDiscount,
             ProductStock: req.body.prodStock,
             ProductSize: req.body.prodSize,
             ProductColour: req.body.prodColour,
+            ProductDescription:req.body.prodDescription
+
         };
 
         // Remove undefined fields from the updateData object

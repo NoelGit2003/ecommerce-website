@@ -13,7 +13,7 @@ const Collections = (props) => {
           <h1>{props.title}</h1>
         </div>
 
-        <SwiperCard className='collection-item collection-slider' />
+        <SwiperCard className='collection-item collection-slider' products = {props.products}/>
 
         <div className="collection-item">
           <button className='btn collection-btn'>See All</button>

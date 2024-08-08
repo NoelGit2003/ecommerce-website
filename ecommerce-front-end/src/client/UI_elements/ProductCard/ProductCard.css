@@ -36,7 +36,7 @@
 
 .bp-card-image {
     width: 100%;
-    height: auto;
+    height: 200px;
     max-width: 200px;
     max-height: 200px;
     object-fit: cover;
@@ -66,6 +66,13 @@
     font-weight: bold;
     color: #333;
 }
+
+.bp-card-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%; /* Set a width to ensure the ellipsis appears correctly */
+  }
 
 .bp-card-rating {
     /* margin-bottom: 5px; */

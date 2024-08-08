@@ -5,7 +5,7 @@ ProductSchema = new mongoose.Schema({
     ProductImage: String,
     ProductTitle: String,
     ProductCategory: String,
-
+    ProductGenderCategory:String,
     ProductPrice: Number,
     ProductRating: Number,
     ProductDiscount: Number,
@@ -13,6 +13,7 @@ ProductSchema = new mongoose.Schema({
 
     ProductSize: String,
     ProductColour: String,
+    ProductDescription: String,
     
     ProductReviews: Object
 })

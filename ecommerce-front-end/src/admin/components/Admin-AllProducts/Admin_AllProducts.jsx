@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import AdminSidebar from '../Admin-Sidebar/AdminSidebar';
+import Pagination from '../../../client/UI_elements/Pagination/Pagination';
 import './Admin_Allproducts.css'
 import { NavLink } from 'react-router-dom';
 
 const Admin_AllProducts = () => {
+
+
 
   const [products, setProducts] = useState([]);
 
@@ -31,7 +34,8 @@ const Admin_AllProducts = () => {
       })
       .catch(err => console.error('Error deleting product: ', err));
   }
-  
+
+
 
   return (
     <>
@@ -43,36 +47,54 @@ const Admin_AllProducts = () => {
             <hr />
             {products ? (
               <ul>
-                {products.map((product) => {
-                  // console.log('Product ID:', product._id)
-                  return (
-                    <div className='product-box' key={product._id}>
-                      <li >
-                        <img src={`http://localhost:3000/uploads/${product.ProductImage}`} alt={product.ProductName} />
-                        <h2>{product.ProductName}</h2>
-                        <p>Title: {product.ProductTitle}</p>
-                        <p>Category: {product.ProductCategory}</p>
-                        <p>Price: ${product.ProductPrice}</p>
-                        <p>Rating: {product.ProductRating}</p>
-                        <p>Discount: {product.ProductDiscount}%</p>
-                        <p>Stock: {product.ProductStock}</p>
-                        <p>Size: {product.ProductSize}</p>
-                        <p>Colour: {product.ProductColour}</p>
+                <div className="product-list-box">
+                  {products.map((product) => {
+                    // console.log('Product ID:', product._id)
+                    return (
+                      <div className='product-box' key={product._id}>
+                        <li >
+                          <div className="product-img-box">
+                            <img src={`http://localhost:3000/uploads/${product.ProductImage}`} alt={product.ProductName} />
+                          </div>
+                          <div className="product-first-section">
+                            <h4>{product.ProductName}</h4>
+                            <div className="product-price">
+                              <div className="rupee-img">
+                                <img src="../../../images/icon-rupees.png" alt="" />
+                              </div>
+                              <p>{product.ProductPrice}</p>
+                            </div>
+                          </div>
+                          <h6>{product.ProductTitle}</h6>
+                          <p>{product.ProductDescription}</p>
+                          {/* {product.ProductCategory && <p>{product.ProductCategory}</p>}
+                        {product.ProductPrice && <p><span><img src="../../" alt="" /></span>{product.ProductPrice}</p>}
+                        {product.ProductRating && <p>{product.ProductRating}</p>}
+                        {product.ProductDiscount && <p>{product.ProductDiscount}</p>}
+                        {product.ProductStock && <p>{product.ProductStock}</p>}
+                        {product.ProductSize && <p>{product.ProductSize}</p>}
+                        {product.ProductColour && <p>{product.ProductColour}</p>} */}
 
-                      </li>
-                      <button type='submit' className='product-delete-btn product_btn' onClick={() => handleDelete(product._id)}>Delete</button>
-                      <NavLink to={`/admin/edit/${product._id}`}>
-                        <button type="submit" className='product-Update-btn product_btn'>Update</button>
-                      </NavLink>
-                    </div>
-                  )
-                })}
+                        </li>
+                        <button type='submit' className='product-delete-btn product_btn' onClick={() => handleDelete(product._id)}>Delete</button>
+                        <NavLink to={`/admin/edit/${product._id}`}>
+                          <button type="submit" className='product-Update-btn product_btn'>Update</button>
+                        </NavLink>
+                      </div>
+                    )
+                  })}
+                </div>
               </ul>
             ) : (
               <p> No product available.</p>
             )}
           </div>
         </div>
+
+        <div className="product-pagination">
+          <Pagination />
+        </div>
+
       </section>
     </>
   )

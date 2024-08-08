@@ -23,7 +23,7 @@
 
 .card-image {
     width: 100%;
-    height: auto;
+    height: 200px;
     max-width: 200px;
     max-height: 200px;
     object-fit: cover;
@@ -50,6 +50,14 @@
     color: #333;
 }
 
+.card-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    /* Make sure to set a width */
+}
+
 .card-rating {
     /* margin-bottom: 5px; */
     font-size: 0.9em;
@@ -59,7 +67,7 @@
     flex-wrap: wrap;
 }
 
-.card-rating-number{
+.card-rating-number {
     padding: 0 0 0 5px;
 }
 
@@ -90,14 +98,14 @@
         margin-top: 5px;
         font-size: 0.7em;
     }
-    
+
     .card-name {
         font-size: 1.2em;
         font-weight: 400;
     }
-    
+
     .card-rating {
         font-size: 0.7em;
     }
-    
+
 }

@@ -12,12 +12,14 @@ const EditProduct = () => {
   const [file, setFile] = useState(null);
   const [prodTitle, setProdTitle] = useState('');
   const [prodCategory, setProdCategory] = useState('');
+  const [prodGenderCategory,setProdGenderCategory] = useState('')
   const [prodPrice, setProdPrice] = useState('');
   const [prodRate, setProdRate] = useState('');
   const [prodDiscount, setProdDiscount] = useState('');
   const [prodStock, setProdStock] = useState('');
   const [prodSize, setProdSize] = useState('');
   const [prodColour, setProdColour] = useState('');
+  const [prodDescription,setProdDescription] = useState('')
 
   useEffect(() => {
     axios.get(`http://localhost:3000/admin/edit/${id}`)
@@ -27,12 +29,14 @@ const EditProduct = () => {
         setProdName(data.ProductName || '');
         setProdTitle(data.ProductTitle || '');
         setProdCategory(data.ProductCategory || '');
+        setProdGenderCategory(data.ProductGenderCategory || '');
         setProdPrice(data.ProductPrice || '');
         setProdRate(data.ProductRating || '');
         setProdDiscount(data.ProductDiscount || '');
         setProdStock(data.ProductStock || '');
         setProdSize(data.ProductSize || '');
         setProdColour(data.ProductColour || '');
+        setProdDescription(data.ProductDescription || '')
       })
       .catch(err => console.log(err));
   }, [id]);
@@ -43,12 +47,14 @@ const EditProduct = () => {
     formdata.append('prodName', prodName);
     formdata.append('prodTitle', prodTitle);
     formdata.append('prodCategory', prodCategory);
+    formdata.append('prodGenderCategory',prodGenderCategory)
     formdata.append('prodPrice', prodPrice);
     formdata.append('prodRate', prodRate);
     formdata.append('prodDiscount', prodDiscount);
     formdata.append('prodStock', prodStock);
     formdata.append('prodSize', prodSize);
     formdata.append('prodColour', prodColour);
+    formdata.append('prodDescription',prodDescription);
 
     if (file) {
       formdata.append('product', file);
@@ -125,6 +131,15 @@ const EditProduct = () => {
                 onChange={(e) => setProdCategory(e.target.value)}
                 value={prodCategory}
               />
+              <label htmlFor="category">Enter gender:</label>
+              <input
+                className="product-textbox"
+                type="text"
+                id="gender"
+                name="gender"
+                onChange={(e) =>setProdGenderCategory(e.target.value)}
+                value={prodGenderCategory}
+              />
               <label htmlFor="rating">Enter rating:</label>
               <input
                 className="product-textbox"
@@ -160,6 +175,15 @@ const EditProduct = () => {
                 name="colour"
                 onChange={(e) => setProdColour(e.target.value)}
                 value={prodColour}
+              />
+              <label htmlFor="description">Enter description:</label>
+              <input
+                className="product-textbox"
+                type="text"
+                id="description"
+                name="description"
+                onChange={(e) => setProdDescription(e.target.value)}
+                value={prodDescription}
               />
               <div className='submit-div'>
                 <button type="submit" className='product-submit-btn'>Edit</button>

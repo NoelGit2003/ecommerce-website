@@ -1,14 +1,14 @@
-.product-box{
+.admin-dashboard .product-box {
      border-style: none;
      border-radius: 20px;
      height: auto;
-     width: auto;
-    margin: 30px 8px;
-    background-color: #f8f9fa;
-    padding: 30px;
+     width: 450px;
+     margin: 30px 8px;
+     background-color: #f8f9fa;
+     padding: 20px;
 }
 
-.product_btn{
+.admin-dashboard .product_btn {
      height: 50px;
      width: 120px;
      border-style: none;
@@ -18,18 +18,60 @@
      background-color: #b98bb9;
 }
 
-.product-delete-btn{
+.admin-dashboard .product-delete-btn {
      /* background-color: #e6dfe6; */
      margin-right: 10px;
 }
 
-li{
+.admin-dashboard .product-box li {
      list-style: none;
 }
 
-img{
-     height: 90px;
-     width: 90px;
-     margin-bottom: 10px;
+.admin-dashboard img {
+     height: 100%;
+     width: 100%;
+     border-style: none;
+     border-radius: 15px;
+     object-fit: cover;
 }
 
+.admin-dashboard .product-img-box {
+     margin-bottom: 15px;
+     height: 300px;
+     width: auto;
+     /* padding-top: 0; */
+}
+
+.admin-dashboard .product-first-section {
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+}
+
+
+.admin-dashboard .product-list-box {
+     display: flex;
+     flex-wrap: wrap;
+}
+
+.admin-dashboard .product-price {
+     display: flex;
+     flex-direction: row;
+     gap: 1px;
+     justify-content: center;
+     /* align-items: center; */
+}
+
+.admin-dashboard .product-price img {
+     height: 20px;
+     width: 20px;
+}
+
+.admin-dashboard .product-pagination {
+     /* margin-left: 160px;
+     margin-right: 160px; */
+     display: flex;
+     justify-content: center;
+     align-items: center;
+
+}

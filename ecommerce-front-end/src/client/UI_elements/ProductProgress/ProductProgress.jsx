@@ -5,31 +5,31 @@ function ProductProgress() {
         <div className='main-ProgressBar'>
             
             <div className="star-rating">
-                <p style={{color: 'black'}}>5 stars
+                <span style={{color: 'black'}}>5 stars
                 <ProgressBar variant="success" now={40} />
-                </p>
+                </span>
             </div>
            
             <div className="star-rating">
-                <p style={{color: 'black'}}>4 stars
+                <span style={{color: 'black'}}>4 stars
                 <ProgressBar variant="info" now={20} />
-                </p>
+                </span>
             </div>
             <div className="star-rating">
-                <p style={{color: 'black'}}>3 stars
+                <span style={{color: 'black'}}>3 stars
                 <ProgressBar variant="warning" now={60} />
-                </p>
+                </span>
             </div>
             <div className="star-rating">
-                <p style={{color: 'black'}}>2 stars
+                <span style={{color: 'black'}}>2 stars
                 <ProgressBar variant="danger" now={80} />
-                </p>
+                </span>
             </div>
 
             <div className="star-rating">
-                <p style={{color: 'black'}}>1 star
+                <span style={{color: 'black'}}>1 star
                 <ProgressBar variant=".text-danger-emphasis" now={80} />
-                </p>
+                </span>
             </div>
             </div>
             );

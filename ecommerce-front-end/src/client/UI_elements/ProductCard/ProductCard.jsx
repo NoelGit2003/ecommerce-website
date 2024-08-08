@@ -1,7 +1,7 @@
 import React from 'react'
 import './ProductCard.css'
 
-const ProductCard = () => {
+const ProductCard = (props) => {
     const currency = 'Rs. '
 
     const renderStars = (rating) => {
@@ -21,13 +21,13 @@ const ProductCard = () => {
     }
 
 
-    const card =
-    {
-        name: 'Drone',
-        price: 100000,
-        rating: 5,
-        image: "https://static.wixstatic.com/media/c22c23_77a52a8e6f8b4879a6548e11a3df3613~mv2.jpg/v1/fill/w_331,h_331,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/c22c23_77a52a8e6f8b4879a6548e11a3df3613~mv2.jpg"
-    }
+    // const card =
+    // {
+    //     name: 'Drone',
+    //     price: 100000,
+    //     rating: 5,
+    //     image: "https://static.wixstatic.com/media/c22c23_77a52a8e6f8b4879a6548e11a3df3613~mv2.jpg/v1/fill/w_331,h_331,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/c22c23_77a52a8e6f8b4879a6548e11a3df3613~mv2.jpg"
+    // }
 
 
     return (
@@ -35,19 +35,19 @@ const ProductCard = () => {
             <div className="bp-card">
                 <div className="bp-card-details">
                     <div className="bp-card-img">
-                        <img src={card.image} alt="bp_image" className="bp-card-image" />
+                        <img src={props.image} alt="bp_image" className="bp-card-image" />
                     </div>
 
-                    <div className="bp-card-name">{card.name}</div>
+                    <div className="bp-card-name">{props.name}</div>
                     <div className="bp-card-price">
                         <span>{currency}</span>
-                        <span>{card.price}</span>
+                        <span>{props.price}</span>
                     </div>
                     <div className="bp-card-rating">
                         <span className='bp-star-rating'>
-                            {renderStars(card.rating)}
+                            {renderStars(props.rating)}
                         </span>
-                        <span className="bp-card-rating-number">{card.rating}</span>
+                        <span className="bp-card-rating-number">{props.rating}</span>
                     </div>
                 </div>
             </div>

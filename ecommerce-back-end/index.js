@@ -8,6 +8,7 @@ const path = require('path')
 const dbConnect = require('./config/dbConnect')
 const authRouter = require('./routes/authRoutes')
 const adminRouter = require('./routes/adminRoutes')
+const clientRouter = require('./routes/clientRoutes')
 
 //Connect database
 dbConnect();
@@ -24,12 +25,12 @@ app.use(cookieParser())
 // app.use(express.static('public'))
 app.use('/uploads', express.static(path.join(__dirname, 'storage/uploads')));
 app.use(express.urlencoded({ extended: true }));
-app.set('view engine', 'ejs')
 
 
 //Using app routes
 app.use('/', authRouter)
 app.use('/admin', adminRouter)
+app.use('/client', clientRouter)
 
 
 app.listen('3000', () => {

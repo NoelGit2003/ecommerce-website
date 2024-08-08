@@ -10,7 +10,7 @@ const AdminProducts = () => {
   const [file, setFile] = useState(null)
   const [prodTitle, setProdTitle] = useState('Nill')
   const [prodCategory, setProdCategory] = useState('Nill')
-
+  const [prodGenderCategory,setProdGenderCategory] = useState('Nill')
   const [prodPrice, setProdPrice] = useState(0)
   const [prodRate, setProdRate] = useState(0)
   const [prodDiscount, setProdDiscount] = useState(0)
@@ -18,6 +18,7 @@ const AdminProducts = () => {
 
   const [prodSize, setProdSize] = useState(0)
   const [prodColour, setProdColour] = useState('Nill')
+  const [prodDescription,setProdDescription] = useState('Nill')
   const formdata = new FormData()
 
   const handleUpload = (e) => {
@@ -27,12 +28,14 @@ const AdminProducts = () => {
     formdata.append('prodName', prodName)
     formdata.append('prodTitle',prodTitle)
     formdata.append('prodCategory',prodCategory)
+    formdata.append('prodGenderCategory',prodGenderCategory)
     formdata.append('prodPrice',prodPrice)
     formdata.append('prodRate',prodRate)
     formdata.append('prodDiscount',prodDiscount)
     formdata.append('prodStock',prodStock)
     formdata.append('prodSize',prodSize)
     formdata.append('prodColour',prodColour)
+    formdata.append('prodDescription',prodDescription)
 
     axios.post('http://localhost:3000/admin/upload', formdata)
       .then(res => console.log(res))
@@ -97,6 +100,8 @@ const AdminProducts = () => {
                   {/* <form method='post' className='product-form right-form' onSubmit={uploadProduct}> */}
                   <label htmlFor="category">Enter category:</label>
                   <input className="product-textbox" type="text" id="category" name="category" onChange={(e) => setProdCategory(e.target.value)}/>
+                  <label htmlFor="category">Enter Gender:</label>
+                  <input className="product-textbox" type="text" id="gender" name="gender" onChange={(e) => setProdGenderCategory(e.target.value)}/>
                   <label htmlFor="rating">Enter rating:</label>
                   <input className="product-textbox" type="text" id="rating" name="rating" onChange={(e) => setProdRate(e.target.value)}/>
                   <label htmlFor="discount">Enter discount:</label>
@@ -105,6 +110,8 @@ const AdminProducts = () => {
                   <input className="product-textbox" type="text" id="size" name="size" onChange={(e) => setProdSize(e.target.value)}/>
                   <label htmlFor="colour">Enter colour:</label>
                   <input className="product-textbox" type="text" id="colour" name="colour" onChange={(e) => setProdColour(e.target.value)}/>
+                  <label htmlFor="description">Enter description:</label>
+                  <input className="product-textbox" type="text" id="description" name="description" onChange={(e) => setProdDescription(e.target.value)}/>
               </form>
             </div>
             <div className='submit-div'>
