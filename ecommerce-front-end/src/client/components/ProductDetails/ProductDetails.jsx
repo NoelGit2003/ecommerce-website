@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { NavLink, useParams } from 'react-router-dom';
 import axios from 'axios';
 
+import { userContext } from '../../../App'
 import ProductProgress from '../../UI_elements/ProductProgress/ProductProgress';
 import Breadcrumb from '../../UI_elements/Breadcrumb/Breadcrumb';
 import SwiperCard from '../../UI_elements/SwiperCard/SwiperCard';
@@ -9,10 +10,10 @@ import './ProductDetails.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 const ProductDetails = () => {
+  const { user } = useContext(userContext);
   const { id } = useParams();
   const [product, setProduct] = useState({});
   const [allProducts, setAllProducts] = useState([]);
-
 
   const [quantity, setQuantity] = useState(1);
 
@@ -38,6 +39,22 @@ const ProductDetails = () => {
 
     fetchProducts();
   }, []);
+
+  const addToCart = async () => {
+    try {
+      console.log(user)
+      const response = await axios.put('http://localhost:3000/client/addToCart', {
+        email: user.email, // Use the user's email
+        productId: id, // Use the current product ID
+        quantity: quantity
+      });
+
+      console.log('Product added to cart:', response.data);
+      // Optionally, provide feedback to the user that the product has been added to the cart
+    } catch (error) {
+      console.error('Error adding product to cart:', error);
+    }
+  };
 
   const renderStars = (rating) => {
     const fullStars = Math.floor(rating);
@@ -110,7 +127,13 @@ const ProductDetails = () => {
                 </div>
               </div>
               <div className="product-shop-buttons">
-                <button className="btn btn-dark rounded-4 px-3 product-buttons" type="button">Add to cart</button>
+                <button
+                  className="btn btn-dark rounded-4 px-3 product-buttons"
+                  type="button"
+                  onClick={addToCart}
+                >
+                  Add to cart
+                </button>
                 <NavLink to="/orderNow">
                   <button className="btn btn-dark rounded-4 px-3 product-buttons" type="button">Buy Now</button>
                 </NavLink>
@@ -152,7 +175,7 @@ const ProductDetails = () => {
       </div>
       <div className="other-products">
         <h4>You might also like</h4>
-        <SwiperCard products={allProducts}/>
+        <SwiperCard products={allProducts} />
       </div>
     </div>
   );

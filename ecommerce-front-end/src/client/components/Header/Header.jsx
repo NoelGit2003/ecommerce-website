@@ -12,8 +12,9 @@ import './Header.css'
 import MobileSidebar from './MobileSidebar/MobileSidebar'
 
 function Header() {
-  const context = useContext(userContext)
-  const user = context.user;
+  const { user } = useContext(userContext);
+
+  
 
   // console.log('User in Header:', user);
   // console.log('User name:', user.name);

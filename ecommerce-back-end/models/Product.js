@@ -1,23 +1,45 @@
-const mongoose = require('mongoose')
+// const mongoose = require('mongoose')
 
-ProductSchema = new mongoose.Schema({
-    ProductName: String,
-    ProductImage: String,
-    ProductTitle: String,
-    ProductCategory: String,
-    ProductGenderCategory:String,
-    ProductPrice: Number,
-    ProductRating: Number,
-    ProductDiscount: Number,
-    ProductStock: Number,
+// ProductSchema = new mongoose.Schema({
+//     ProductName: String,
+//     ProductImage: String,
+//     ProductTitle: String,
+//     ProductCategory: String,
+//     ProductGenderCategory:String,
+//     ProductPrice: Number,
+//     ProductRating: Number,
+//     ProductDiscount: Number,
+//     ProductStock: Number,
 
-    ProductSize: String,
-    ProductColour: String,
-    ProductDescription: String,
+//     ProductSize: String,
+//     ProductColour: String,
+//     ProductDescription: String,
     
-    ProductReviews: Object
-})
+//     ProductReviews: Object
+// })
 
-ProductModel = mongoose.model('product', ProductSchema)
+// ProductModel = mongoose.model('product', ProductSchema)
 
-module.exports = ProductModel;
+// module.exports = ProductModel;
+
+const mongoose = require('mongoose');
+
+const ProductSchema = new mongoose.Schema({
+  ProductName: String,
+  ProductImage: String,
+  ProductTitle: String,
+  ProductCategory: String,
+  ProductGenderCategory: String,
+  ProductPrice: Number,
+  ProductRating: Number,
+  ProductDiscount: Number,
+  ProductStock: Number,
+  ProductSize: [String],
+  ProductColour: [String],
+  ProductDescription: String,
+  ProductReviews: [String],
+});
+
+const Product = mongoose.model('Product', ProductSchema);
+
+module.exports = Product;

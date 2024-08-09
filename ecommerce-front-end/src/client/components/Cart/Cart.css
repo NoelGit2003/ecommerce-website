@@ -15,17 +15,17 @@
     flex-direction: column;
 
     width: 60vw;
+    /* flex: 1; */
 }
 
 .cart-right {
+    /* flex: 1; */
+    height: auto;
     display: flex;
     justify-content: start;
-    align-items: center;
+    align-items: start;
     flex-direction: column;
 }
-
-
-
 
 .c-left-head-box {
     width: 60vw;
