@@ -1,23 +1,38 @@
 import React from 'react'
 import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import {userContext } from '../../../../App';
+import { useContext } from 'react';
 
 const BrowsingSidebar = () => {
     const [sidebar_rangeValue, setSidebar_rangeValue] = useState(0);
+    const {browseProduct,setbrowseProduct} = useContext(userContext);
 
     const handleChange = (event) => {
         setSidebar_rangeValue(event.target.value);
     };
+
+    const handleCategoryClick = (category) => {
+        setbrowseProduct(category);
+    }
     return (
         <div className="bp-sidebar">
             <div className="bp-sidebar-content">
                 <h4 className='bp-sidebar-head'> Browse by </h4>
                 <hr />
                 <ul className='bp-sidebar-list'>
+                    
                     <li className='bp-sider-list-item'> All Products </li>
                     <li className='bp-sider-list-item'> Best Seller </li>
-                    <li className='bp-sider-list-item'> Electronics </li>
-                    <li className='bp-sider-list-item'> Cosmetics </li>
-                    <li className='bp-sider-list-item'> Clothing </li>
+                    <NavLink  to='/category' style={{textDecoration: 'none'}} onClick={()=> handleCategoryClick('Electronics')}>
+                    <li className='bp-sider-list-item' style={{color:'#212529'}}>Electronics </li>
+                    </NavLink>
+                    <NavLink  to='/category' style={{textDecoration: 'none'}} onClick={()=> handleCategoryClick('Beauty')}>
+                    <li className='bp-sider-list-item' style={{color:'#212529'}}> Beauty </li>
+                    </NavLink>
+                    <NavLink  to='/category' style={{textDecoration: 'none'}} onClick={()=> handleCategoryClick('Fashion')}>
+                    <li className='bp-sider-list-item' style={{color:'#212529'}}> Fashion </li>
+                    </NavLink>
                 </ul>
             </div>
             <div className="bp-sidebar-content">

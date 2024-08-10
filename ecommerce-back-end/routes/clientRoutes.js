@@ -3,7 +3,8 @@ const {
     getProductByID,
     addToCart,
     clientCartItems,
-    updateCart
+    updateCart,
+    cartItemDelete
 } = require('../controller/clientController')
 
 const {
@@ -19,6 +20,7 @@ router.get('/getProduct/:id', getProductByID)
 router.put('/addToCart', addToCart)
 router.get('/cart', clientCartItems)
 router.put('/updateCartQuantity', updateCart)
+router.delete('/cartItemDelete', cartItemDelete)
 
 
 module.exports = router

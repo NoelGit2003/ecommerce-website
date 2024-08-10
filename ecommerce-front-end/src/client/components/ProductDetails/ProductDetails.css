@@ -254,6 +254,7 @@
     flex-direction: column;
     /* gap: 0.3vh; */
     margin-top: 13px;
+    margin-bottom: 15px;
 
 }
 
@@ -269,8 +270,12 @@
    /* display: inline; */
    position: relative;
    width: 80px;
+ 
 }
 
+.product-item-color{
+    margin-bottom: 15px;
+}
 
 .product-input-price input{
 width: 100%;
@@ -292,7 +297,7 @@ padding-left: 20px;
     position: absolute;
     cursor: pointer;
     right: 6px;
-    top: 2px;
+    top: 1px;
 
 }
 
@@ -301,7 +306,7 @@ padding-left: 20px;
     width: 12px;
     cursor: pointer;
     position: absolute;
-    bottom: 2px;
+    bottom: 11px;
     right: 6px;
 }
 

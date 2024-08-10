@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import { NavLink } from 'react-router-dom';
+import {userContext } from '../../../App'
+import { useContext } from 'react'
+import { createContext } from 'react';
 import axios from 'axios'
 
 import Help from '../Home/Help/Help';
@@ -11,9 +14,12 @@ import BrowsingSidebar from './BrowsingSidebar/BrowsingSidebar';
 import ProductCard from '../../UI_elements/ProductCard/ProductCard';
 import './BrowsingPage.css';
 
+
 const BrowsingPage = () => {
 
     const [products, setProducts] = useState([]);
+    const {browseProduct,setbrowseProduct} = useContext(userContext);
+  
 
     useEffect(() => {
         const fetchProducts = async () => {
@@ -30,6 +36,7 @@ const BrowsingPage = () => {
     }, []);
 
     return (
+        
         <div className='browsing-page'>
             <div className="browsing-breadcrumb">
                 <BreadCrumb />
@@ -96,16 +103,19 @@ const BrowsingPage = () => {
                     <div className="bp-card-container">
                         {
                             products.map(product => (
-                                <NavLink to={`/productDetails/${product._id}`} key={product._id}>
-                                    <span className="bp-card-group">
-                                        <ProductCard
-                                            name= {product.ProductName}
-                                            image= {`http://localhost:3000/uploads/${product.ProductImage}`}
-                                            price={product.ProductPrice}
-                                            rating={product.ProductRating}
-                                        />
-                                    </span>
-                                </NavLink>
+                                // console.log({ product })
+                                (product.ProductCategory === browseProduct) && (
+                                    <NavLink to={`/productDetails/${product._id}`} key={product._id}>
+                                        <span className="bp-card-group">
+                                            <ProductCard
+                                                name={product.ProductName}
+                                                image={`http://localhost:3000/uploads/${product.ProductImage}`}
+                                                price={product.ProductPrice}
+                                                rating={product.ProductRating}
+                                            />
+                                        </span>
+                                    </NavLink>
+                                )  
                             ))
                         }
                     </div>
@@ -113,6 +123,7 @@ const BrowsingPage = () => {
             </div>
             <Help />
         </div >
+        
     );
 };
 

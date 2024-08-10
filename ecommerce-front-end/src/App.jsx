@@ -23,7 +23,6 @@ import AdminCategories from './admin/components/Admin-Categories/AdminCategories
 
 export const userContext = createContext()
 
-
 const App = () => {
 
   const [user, setUser] = useState({})
@@ -31,6 +30,8 @@ const App = () => {
   const [forgotPage, setForgotPage] = useState('login')
   const [forgotEmail, setForgotEmail] = useState()
   const [forgotOtp, setForgotOtp] = useState()
+
+  const [browseProduct, setbrowseProduct] = useState('Electronics');
 
   const ResetPwdNavigation = () => {
     if (forgotPage === 'login') return <ForgotPassword />;
@@ -50,7 +51,7 @@ const App = () => {
 
     return (
     <section className='app'>
-      <userContext.Provider value={{ user, forgotPage, setForgotPage, forgotOtp, setForgotOtp, forgotEmail, setForgotEmail }}>
+      <userContext.Provider value={{ user, forgotPage, setForgotPage, forgotOtp, setForgotOtp, forgotEmail, setForgotEmail, browseProduct, setbrowseProduct }}>
         <BrowserRouter>
           <header className='header'>
             <Header />

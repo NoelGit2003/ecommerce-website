@@ -126,6 +126,29 @@ const ProductDetails = () => {
                   <img onClick={decrement} className='quantity-down-arrow' src="./ProductDetail Images/down-arrow.png" alt="-" />
                 </div>
               </div>
+
+              <div className='product-item-color'>
+                <h5 >Color : <span>{product.ProductColour}</span></h5>
+              </div>
+
+              {product.ProductCategory === 'Fashion' &&
+                <div className="product-item-size"><h5> Size : </h5>
+                  <div class="dropdown">
+                    <a style={{ backgroundColor: "#7066e0", color: 'white' }} class="btn  dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      S
+                    </a>
+
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">S</a></li>
+                      <li><a class="dropdown-item" href="#">M</a></li>
+                      <li><a class="dropdown-item" href="#">L</a></li>
+                      <li><a class="dropdown-item" href="#">XL</a></li>
+                      <li><a class="dropdown-item" href="#">2XL</a></li>
+                    </ul>
+                  </div>
+                </div>
+              }
+
               <div className="product-shop-buttons">
                 <button
                   className="btn btn-dark rounded-4 px-3 product-buttons"
